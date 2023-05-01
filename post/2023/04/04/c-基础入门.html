@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>c++基础入门 | Whfox&#39;s Blog</title>
+    <link rel="shortcut icon" href="/logo.jpg"/>
+    <meta name="generator" content="VuePress 1.9.8"/>
+    <link rel="icon" href="/logo.jpg">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <link rel="alternate" type="application/rss+xml" href="https://whfox.ml/rss.xml" title="Whfox&#39;s Blog RSS Feed">
+    <link rel="alternate" type="application/atom+xml" href="https://whfox.ml/feed.atom" title="Whfox&#39;s Blog Atom Feed">
+    <link rel="alternate" type="application/json" href="https://whfox.ml/feed.json" title="Whfox&#39;s Blog JSON Feed">
+    <meta name="description" content="不说话，装高手">
+    <meta property="article:published_time" content="2023-04-04T00:00:00.000Z">
+    <meta property="og:site_name" content="Whfox&#39;s Blog">
+    <meta property="og:title" content="c++基础入门">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://whfox.ml//post/2023/04/04/c-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8.html">
+    <meta name="twitter:title" content="c++基础入门">
+    <meta name="twitter:url" content="https://whfox.ml//post/2023/04/04/c-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#607d8b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    
+    <link rel="preload" href="/assets/css/0.styles.2f80e382.css" as="style"><link rel="preload" href="/assets/js/app.e57a5b2b.js" as="script"><link rel="preload" href="/assets/js/4.2449750b.js" as="script"><link rel="preload" href="/assets/js/9.0f7f066d.js" as="script"><link rel="preload" href="/assets/js/24.e3464cdb.js" as="script"><link rel="preload" href="/assets/js/5.ff79713e.js" as="script"><link rel="prefetch" href="/assets/js/10.ac8b2e92.js"><link rel="prefetch" href="/assets/js/11.4714e108.js"><link rel="prefetch" href="/assets/js/12.7b3e4f71.js"><link rel="prefetch" href="/assets/js/13.3e341aa2.js"><link rel="prefetch" href="/assets/js/14.624546be.js"><link rel="prefetch" href="/assets/js/15.ce03a108.js"><link rel="prefetch" href="/assets/js/16.139683fa.js"><link rel="prefetch" href="/assets/js/17.56684652.js"><link rel="prefetch" href="/assets/js/18.8a506e1a.js"><link rel="prefetch" href="/assets/js/19.08571a88.js"><link rel="prefetch" href="/assets/js/20.4b428def.js"><link rel="prefetch" href="/assets/js/21.d4733114.js"><link rel="prefetch" href="/assets/js/22.348a6d4a.js"><link rel="prefetch" href="/assets/js/23.6a4042da.js"><link rel="prefetch" href="/assets/js/25.855b64f1.js"><link rel="prefetch" href="/assets/js/26.aa7cb1af.js"><link rel="prefetch" href="/assets/js/27.c2b0f7d6.js"><link rel="prefetch" href="/assets/js/28.e89c868c.js"><link rel="prefetch" href="/assets/js/6.1a67b5c8.js"><link rel="prefetch" href="/assets/js/7.fa92cff9.js"><link rel="prefetch" href="/assets/js/8.fba5d909.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.7a90010b.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.b89ce8e5.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.2f80e382.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><div class="theme-sidebar"><div class="theme-sidebar__inner"><div class="theme-header"><a href="/" class="theme-header__logo router-link-active"><img draggable="false" src="/logo.jpg" alt="logo" width="160" height="160" class="theme-header__picture"> <div class="theme-palette"><span class="theme-palette__emoji"><svg class="theme-icon theme-icon-palette"><use xlink:href="#theme-icon-palette"></use></svg></span> <div class="theme-palette__list"><a href="javascript:;" title="#673ab7" style="color:#673ab7;"></a><a href="javascript:;" title="#2196f3" style="color:#2196f3;"></a><a href="javascript:;" title="#009688" style="color:#009688;"></a><a href="javascript:;" title="#4caf50" style="color:#4caf50;"></a><a href="javascript:;" title="#ff9800" style="color:#ff9800;"></a><a href="javascript:;" title="#ff5722" style="color:#ff5722;"></a><a href="javascript:;" title="#795548" style="color:#795548;"></a><a href="javascript:;" title="#607D8B" style="color:#607D8B;"></a><a href="javascript:;" title="#2a2b33" style="color:#2a2b33;"></a></div></div></a> <a href="/" class="theme-header__name router-link-active">
+        Whfox's Blog
+      </a> <p class="theme-header__slogan">不说话，装高手</p></div> <div class="theme-SubNav"><a href="/archives/" class="theme-SubNav__item"><span class="theme-SubNav__count">16</span> <span class="theme-SubNav__name">Archives</span></a> <a href="/categories/" class="theme-SubNav__item"><span class="theme-SubNav__count">5</span> <span class="theme-SubNav__name">Categories</span></a> <a href="/tags/" class="theme-SubNav__item"><span class="theme-SubNav__count">4</span> <span class="theme-SubNav__name">Tags</span></a></div> <div class="theme-nav"><div class="search-box mt-7"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  🏠 Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a href="javascript:;" aria-label="📖 Notes" class="dropdown-title"><span class="title">📖 Notes</span> <i class="icon-plus-circle"></i></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/categories/Linux/" class="nav-link">
+  Linux
+</a></li></ul></li><li class="dropdown-item"><h4>
+          
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/categories/DL/" class="nav-link">
+  DL
+</a></li></ul></li><li class="dropdown-item"><h4>
+          
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/categories/RSS/" class="nav-link">
+  RSS
+</a></li></ul></li><li class="dropdown-item"><h4>
+          
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/categories/c++/" class="nav-link">
+  C++
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://whfox.github.io/md2ppt/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  🌠 Powerpoint
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div> <div class="theme-footer"><div class="social-links"><a target="_blank" rel="external nofollow noopener" title="email" href="mailto:boy6.19@163.com" class="icon-email">email</a><a target="_blank" rel="external nofollow noopener" title="github" href="https://github.com/whfox" class="icon-github">github</a><a target="_blank" rel="external nofollow noopener" title="qq" href="//qm.qq.com" class="icon-qq">qq</a><a target="_blank" rel="external nofollow noopener" title="feed" href="/rss.xml" class="icon-feed">feed</a></div> <p class="copyright">© 2023 ❤️ <a target="_blank" href="https://whfox.ml/">whfox</a></p> <p class="powered"><span>Powered by <a href="https://vuepress.vuejs.org" target="_blank" rel="external nofollow noopener">VuePress</a></span> <span class="φde"> Theme - <a href="https://github.com/80maker/vuepress-theme-maker" target="_blank" rel="external nofollow noopener">Maker</a></span></p></div></div></div> <div class="theme-main"><div class="theme-main__inner post"><article itemscope="itemscope" itemtype="https://schema.org/BlogPosting"><header class="article__header"><h1 itemprop="name headline" class="post-title">
+          c++基础入门
+        </h1> <div class="post-meta"><!----> <div class="post-meta__date"><i class="icon-calendar"></i> <time pubdate itemprop="datePublished" datetime="2023-04-04T00:00:00.000Z">
+      Apr 04, 2023
+    </time></div> <div class="post-meta__cates"><i class="icon-cate"></i> <a href="/categories/notes/">
+      notes
+    </a></div> <div class="post-meta__reading"><i class="icon-time"></i>
+    11k words in 46 min
+  </div> <div id="" data-flag-title="Your Article Title" class="leancloud_visitors"><i class="icon-eye"></i> <i class="leancloud-visitors-count">--</i></div></div></header> <div class="article-con"><div itemprop="articleBody" class="article-content content__default copy-code-enabled"><h1 id="c-基础入门"><a href="#c-基础入门" class="header-anchor">#</a> C++基础入门</h1> <h2 id="_1-c-初识"><a href="#_1-c-初识" class="header-anchor">#</a> 1 C++初识</h2> <h3 id="_1-1-第一个c-程序"><a href="#_1-1-第一个c-程序" class="header-anchor">#</a> 1.1  第一个C++程序</h3> <p>编写一个C++程序总共分为4个步骤</p> <ul><li>创建项目</li> <li>创建文件</li> <li>编写代码</li> <li>运行程序</li></ul> <h4 id="_1-1-1-创建项目"><a href="#_1-1-1-创建项目" class="header-anchor">#</a> 1.1.1 创建项目</h4> <p>​	Visual Studio是我们用来编写C++程序的主要工具，我们先将它打开</p> <p><img src="https://whfox-1308375493.cos.ap-nanjing.myqcloud.com/202304041642997.png" alt="1541383178746"></p> <p><img src="https://whfox-1308375493.cos.ap-nanjing.myqcloud.com/202304041642929.png" alt="1541384366413"></p> <h4 id="_1-1-2-创建文件"><a href="#_1-1-2-创建文件" class="header-anchor">#</a> 1.1.2 创建文件</h4> <p>右键源文件，选择添加-&gt;新建项</p> <p><img src="https://whfox-1308375493.cos.ap-nanjing.myqcloud.com/202304041642724.png" alt="1541383817248"></p> <p>给C++文件起个名称，然后点击添加即可。</p> <p><img src="https://whfox-1308375493.cos.ap-nanjing.myqcloud.com/202304041642047.png" alt="1541384140042"></p> <h4 id="_1-1-3-编写代码"><a href="#_1-1-3-编写代码" class="header-anchor">#</a> 1.1.3 编写代码</h4> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+
+	cout &lt;&lt; &quot;Hello world&quot; &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h4 id="_1-1-4-运行程序"><a href="#_1-1-4-运行程序" class="header-anchor">#</a> 1.1.4 运行程序</h4> <p><img src="https://whfox-1308375493.cos.ap-nanjing.myqcloud.com/202304041642170.png" alt="1541384818688"></p> <h3 id="_1-2-注释"><a href="#_1-2-注释" class="header-anchor">#</a> 1.2 注释</h3> <p><strong>作用</strong>：在代码中加一些说明和解释，方便自己或其他程序员程序员阅读代码</p> <p><strong>两种格式</strong></p> <ol><li><strong>单行注释</strong>：<code>// 描述信息</code> <ul><li>通常放在一行代码的上方，或者一条语句的末尾，<mark>对该行代码说明</mark></li></ul></li> <li><strong>多行注释</strong>： <code>/* 描述信息 */</code> <ul><li>通常放在一段代码的上方，<mark>对该段代码做整体说明</mark></li></ul></li></ol> <blockquote><p>提示：编译器在编译代码时，会忽略注释的内容</p></blockquote> <h3 id="_1-3-变量"><a href="#_1-3-变量" class="header-anchor">#</a> 1.3 变量</h3> <p><strong>作用</strong>：给一段指定的内存空间起名，方便操作这段内存</p> <p><strong>语法</strong>：<code>数据类型 变量名 = 初始值;</code></p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+
+	//变量的定义
+	//语法：数据类型  变量名 = 初始值
+
+	int a = 10;
+
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><blockquote><p>注意：C++在创建变量时，必须给变量一个初始值，否则会报错</p></blockquote> <h3 id="_1-4-常量"><a href="#_1-4-常量" class="header-anchor">#</a> 1.4  常量</h3> <p><strong>作用</strong>：用于记录程序中不可更改的数据</p> <p>C++定义常量两种方式</p> <ol><li><p><strong>#define</strong> 宏常量： <code>#define 常量名 常量值</code></p> <ul><li><mark>通常在文件上方定义</mark>，表示一个常量</li></ul></li> <li><p><strong>const</strong>修饰的变量 <code>const 数据类型 常量名 = 常量值</code></p> <ul><li><mark>通常在变量定义前加关键字const</mark>，修饰该变量为常量，不可修改</li></ul></li></ol> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//1、宏常量
+#define day 7
+
+int main() {
+
+	cout &lt;&lt; &quot;一周里总共有 &quot; &lt;&lt; day &lt;&lt; &quot; 天&quot; &lt;&lt; endl;
+	//day = 8;  //报错，宏常量不可以修改
+
+	//2、const修饰变量
+	const int month = 12;
+	cout &lt;&lt; &quot;一年里总共有 &quot; &lt;&lt; month &lt;&lt; &quot; 个月份&quot; &lt;&lt; endl;
+	//month = 24; //报错，常量是不可以修改的
+	
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="_1-5-关键字"><a href="#_1-5-关键字" class="header-anchor">#</a> 1.5 关键字</h3> <p>**作用：**关键字是C++中预先保留的单词（标识符）</p> <ul><li><strong>在定义变量或者常量时候，不要用关键字</strong></li></ul> <p>C++关键字如下：</p> <table><thead><tr><th>asm</th> <th>do</th> <th>if</th> <th>return</th> <th>typedef</th></tr></thead> <tbody><tr><td>auto</td> <td>double</td> <td>inline</td> <td>short</td> <td>typeid</td></tr> <tr><td>bool</td> <td>dynamic_cast</td> <td>int</td> <td>signed</td> <td>typename</td></tr> <tr><td>break</td> <td>else</td> <td>long</td> <td>sizeof</td> <td>union</td></tr> <tr><td>case</td> <td>enum</td> <td>mutable</td> <td>static</td> <td>unsigned</td></tr> <tr><td>catch</td> <td>explicit</td> <td>namespace</td> <td>static_cast</td> <td>using</td></tr> <tr><td>char</td> <td>export</td> <td>new</td> <td>struct</td> <td>virtual</td></tr> <tr><td>class</td> <td>extern</td> <td>operator</td> <td>switch</td> <td>void</td></tr> <tr><td>const</td> <td>false</td> <td>private</td> <td>template</td> <td>volatile</td></tr> <tr><td>const_cast</td> <td>float</td> <td>protected</td> <td>this</td> <td>wchar_t</td></tr> <tr><td>continue</td> <td>for</td> <td>public</td> <td>throw</td> <td>while</td></tr> <tr><td>default</td> <td>friend</td> <td>register</td> <td>true</td> <td></td></tr> <tr><td>delete</td> <td>goto</td> <td>reinterpret_cast</td> <td>try</td> <td></td></tr></tbody></table> <p><code>提示：在给变量或者常量起名称时候，不要用C++得关键字，否则会产生歧义。</code></p> <h3 id="_1-6-标识符命名规则"><a href="#_1-6-标识符命名规则" class="header-anchor">#</a> 1.6 标识符命名规则</h3> <p><strong>作用</strong>：C++规定给标识符（变量、常量）命名时，有一套自己的规则</p> <ul><li>标识符不能是关键字</li> <li>标识符只能由字母、数字、下划线组成</li> <li>第一个字符必须为字母或下划线</li> <li>标识符中字母区分大小写</li></ul> <blockquote><p>建议：给标识符命名时，争取做到见名知意的效果，方便自己和他人的阅读</p></blockquote> <h2 id="_2-数据类型"><a href="#_2-数据类型" class="header-anchor">#</a> 2 数据类型</h2> <p>C++规定在创建一个变量或者常量时，必须要指定出相应的数据类型，否则无法给变量分配内存</p> <h3 id="_2-1-整型"><a href="#_2-1-整型" class="header-anchor">#</a> 2.1 整型</h3> <p><strong>作用</strong>：整型变量表示的是==整数类型==的数据</p> <p>C++中能够表示整型的类型有以下几种方式，<strong>区别在于所占内存空间不同</strong>：</p> <table><thead><tr><th><strong>数据类型</strong></th> <th><strong>占用空间</strong></th> <th>取值范围</th></tr></thead> <tbody><tr><td>short(短整型)</td> <td>2字节</td> <td>(-2^15 ~ 2^15-1)</td></tr> <tr><td>int(整型)</td> <td>4字节</td> <td>(-2^31 ~ 2^31-1)</td></tr> <tr><td>long(长整形)</td> <td>Windows为4字节，Linux为4字节(32位)，8字节(64位)</td> <td>(-2^31 ~ 2^31-1)</td></tr> <tr><td>long long(长长整形)</td> <td>8字节</td> <td>(-2^63 ~ 2^63-1)</td></tr></tbody></table> <h3 id="_2-2-sizeof关键字"><a href="#_2-2-sizeof关键字" class="header-anchor">#</a> 2.2 sizeof关键字</h3> <p>**作用：**利用sizeof关键字可以==统计数据类型所占内存大小==</p> <p><strong>语法：</strong> <code>sizeof( 数据类型 / 变量)</code></p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	cout &lt;&lt; &quot;short 类型所占内存空间为： &quot; &lt;&lt; sizeof(short) &lt;&lt; endl;
+
+	cout &lt;&lt; &quot;int 类型所占内存空间为： &quot; &lt;&lt; sizeof(int) &lt;&lt; endl;
+
+	cout &lt;&lt; &quot;long 类型所占内存空间为： &quot; &lt;&lt; sizeof(long) &lt;&lt; endl;
+
+	cout &lt;&lt; &quot;long long 类型所占内存空间为： &quot; &lt;&lt; sizeof(long long) &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><blockquote><p><strong>整型结论</strong>：<mark>short &lt; int &lt;= long &lt;= long long</mark></p></blockquote> <h3 id="_2-3-实型-浮点型"><a href="#_2-3-实型-浮点型" class="header-anchor">#</a> 2.3 实型（浮点型）</h3> <p><strong>作用</strong>：用于==表示小数==</p> <p>浮点型变量分为两种：</p> <ol><li>单精度float</li> <li>双精度double</li></ol> <p>两者的<strong>区别</strong>在于表示的有效数字范围不同。</p> <table><thead><tr><th><strong>数据类型</strong></th> <th><strong>占用空间</strong></th> <th><strong>有效数字范围</strong></th></tr></thead> <tbody><tr><td>float</td> <td>4字节</td> <td>7位有效数字</td></tr> <tr><td>double</td> <td>8字节</td> <td>15～16位有效数字</td></tr></tbody></table> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	float f1 = 3.14f;
+	double d1 = 3.14;
+
+	cout &lt;&lt; f1 &lt;&lt; endl;
+	cout &lt;&lt; d1&lt;&lt; endl;
+
+	cout &lt;&lt; &quot;float  sizeof = &quot; &lt;&lt; sizeof(f1) &lt;&lt; endl;
+	cout &lt;&lt; &quot;double sizeof = &quot; &lt;&lt; sizeof(d1) &lt;&lt; endl;
+
+	//科学计数法
+	float f2 = 3e2; // 3 * 10 ^ 2 
+	cout &lt;&lt; &quot;f2 = &quot; &lt;&lt; f2 &lt;&lt; endl;
+
+	float f3 = 3e-2;  // 3 * 0.1 ^ 2
+	cout &lt;&lt; &quot;f3 = &quot; &lt;&lt; f3 &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h3 id="_2-4-字符型"><a href="#_2-4-字符型" class="header-anchor">#</a> 2.4 字符型</h3> <p>**作用：**字符型变量用于显示单个字符</p> <p><strong>语法：</strong><code>char ch = 'a';</code></p> <blockquote><p>注意1：在显示字符型变量时，用单引号将字符括起来，不要用双引号</p></blockquote> <blockquote><p>注意2：单引号内只能有一个字符，不可以是字符串</p></blockquote> <ul><li>C和C++中字符型变量只占用==1个字节==。</li> <li>字符型变量并不是把字符本身放到内存中存储，而是将对应的ASCII编码放入到存储单元</li></ul> <p>示例：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+	
+	char ch = 'a';
+	cout &lt;&lt; ch &lt;&lt; endl;
+	cout &lt;&lt; sizeof(char) &lt;&lt; endl;
+
+	//ch = &quot;abcde&quot;; //错误，不可以用双引号
+	//ch = 'abcde'; //错误，单引号内只能引用一个字符
+
+	cout &lt;&lt; (int)ch &lt;&lt; endl;  //查看字符a对应的ASCII码
+	ch = 97; //可以直接用ASCII给字符型变量赋值
+	cout &lt;&lt; ch &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>ASCII码表格：</p> <table><thead><tr><th><strong>ASCII</strong>值</th> <th><strong>控制字符</strong></th> <th><strong>ASCII</strong>值</th> <th><strong>字符</strong></th> <th><strong>ASCII</strong>值</th> <th><strong>字符</strong></th> <th><strong>ASCII</strong>值</th> <th><strong>字符</strong></th></tr></thead> <tbody><tr><td>0</td> <td>NUT</td> <td>32</td> <td>(space)</td> <td>64</td> <td>@</td> <td>96</td> <td>、</td></tr> <tr><td>1</td> <td>SOH</td> <td>33</td> <td>!</td> <td>65</td> <td>A</td> <td>97</td> <td>a</td></tr> <tr><td>2</td> <td>STX</td> <td>34</td> <td>&quot;</td> <td>66</td> <td>B</td> <td>98</td> <td>b</td></tr> <tr><td>3</td> <td>ETX</td> <td>35</td> <td>#</td> <td>67</td> <td>C</td> <td>99</td> <td>c</td></tr> <tr><td>4</td> <td>EOT</td> <td>36</td> <td>$</td> <td>68</td> <td>D</td> <td>100</td> <td>d</td></tr> <tr><td>5</td> <td>ENQ</td> <td>37</td> <td>%</td> <td>69</td> <td>E</td> <td>101</td> <td>e</td></tr> <tr><td>6</td> <td>ACK</td> <td>38</td> <td>&amp;</td> <td>70</td> <td>F</td> <td>102</td> <td>f</td></tr> <tr><td>7</td> <td>BEL</td> <td>39</td> <td>,</td> <td>71</td> <td>G</td> <td>103</td> <td>g</td></tr> <tr><td>8</td> <td>BS</td> <td>40</td> <td>(</td> <td>72</td> <td>H</td> <td>104</td> <td>h</td></tr> <tr><td>9</td> <td>HT</td> <td>41</td> <td>)</td> <td>73</td> <td>I</td> <td>105</td> <td>i</td></tr> <tr><td>10</td> <td>LF</td> <td>42</td> <td>*</td> <td>74</td> <td>J</td> <td>106</td> <td>j</td></tr> <tr><td>11</td> <td>VT</td> <td>43</td> <td>+</td> <td>75</td> <td>K</td> <td>107</td> <td>k</td></tr> <tr><td>12</td> <td>FF</td> <td>44</td> <td>,</td> <td>76</td> <td>L</td> <td>108</td> <td>l</td></tr> <tr><td>13</td> <td>CR</td> <td>45</td> <td>-</td> <td>77</td> <td>M</td> <td>109</td> <td>m</td></tr> <tr><td>14</td> <td>SO</td> <td>46</td> <td>.</td> <td>78</td> <td>N</td> <td>110</td> <td>n</td></tr> <tr><td>15</td> <td>SI</td> <td>47</td> <td>/</td> <td>79</td> <td>O</td> <td>111</td> <td>o</td></tr> <tr><td>16</td> <td>DLE</td> <td>48</td> <td>0</td> <td>80</td> <td>P</td> <td>112</td> <td>p</td></tr> <tr><td>17</td> <td>DCI</td> <td>49</td> <td>1</td> <td>81</td> <td>Q</td> <td>113</td> <td>q</td></tr> <tr><td>18</td> <td>DC2</td> <td>50</td> <td>2</td> <td>82</td> <td>R</td> <td>114</td> <td>r</td></tr> <tr><td>19</td> <td>DC3</td> <td>51</td> <td>3</td> <td>83</td> <td>S</td> <td>115</td> <td>s</td></tr> <tr><td>20</td> <td>DC4</td> <td>52</td> <td>4</td> <td>84</td> <td>T</td> <td>116</td> <td>t</td></tr> <tr><td>21</td> <td>NAK</td> <td>53</td> <td>5</td> <td>85</td> <td>U</td> <td>117</td> <td>u</td></tr> <tr><td>22</td> <td>SYN</td> <td>54</td> <td>6</td> <td>86</td> <td>V</td> <td>118</td> <td>v</td></tr> <tr><td>23</td> <td>TB</td> <td>55</td> <td>7</td> <td>87</td> <td>W</td> <td>119</td> <td>w</td></tr> <tr><td>24</td> <td>CAN</td> <td>56</td> <td>8</td> <td>88</td> <td>X</td> <td>120</td> <td>x</td></tr> <tr><td>25</td> <td>EM</td> <td>57</td> <td>9</td> <td>89</td> <td>Y</td> <td>121</td> <td>y</td></tr> <tr><td>26</td> <td>SUB</td> <td>58</td> <td>:</td> <td>90</td> <td>Z</td> <td>122</td> <td>z</td></tr> <tr><td>27</td> <td>ESC</td> <td>59</td> <td>;</td> <td>91</td> <td>[</td> <td>123</td> <td>{</td></tr> <tr><td>28</td> <td>FS</td> <td>60</td> <td>&lt;</td> <td>92</td> <td>/</td> <td>124</td> <td>|</td></tr> <tr><td>29</td> <td>GS</td> <td>61</td> <td>=</td> <td>93</td> <td>]</td> <td>125</td> <td>}</td></tr> <tr><td>30</td> <td>RS</td> <td>62</td> <td>&gt;</td> <td>94</td> <td>^</td> <td>126</td> <td>`</td></tr> <tr><td>31</td> <td>US</td> <td>63</td> <td>?</td> <td>95</td> <td>_</td> <td>127</td> <td>DEL</td></tr></tbody></table> <p>ASCII 码大致由以下<strong>两部分组</strong>成：</p> <ul><li>ASCII 非打印控制字符： ASCII 表上的数字 <strong>0-31</strong> 分配给了控制字符，用于控制像打印机等一些外围设备。</li> <li>ASCII 打印字符：数字 <strong>32-126</strong> 分配给了能在键盘上找到的字符，当查看或打印文档时就会出现。</li></ul> <h3 id="_2-5-转义字符"><a href="#_2-5-转义字符" class="header-anchor">#</a> 2.5 转义字符</h3> <p>**作用：**用于表示一些==不能显示出来的ASCII字符==</p> <p>现阶段我们常用的转义字符有：<code>\n \\ \t</code></p> <table><thead><tr><th><strong>转义字符</strong></th> <th><strong>含义</strong></th> <th><strong>ASCII</strong>码值（十进制）</th></tr></thead> <tbody><tr><td>\a</td> <td>警报</td> <td>007</td></tr> <tr><td>\b</td> <td>退格(BS) ，将当前位置移到前一列</td> <td>008</td></tr> <tr><td>\f</td> <td>换页(FF)，将当前位置移到下页开头</td> <td>012</td></tr> <tr><td><strong>\n</strong></td> <td><strong>换行(LF) ，将当前位置移到下一行开头</strong></td> <td><strong>010</strong></td></tr> <tr><td>\r</td> <td>回车(CR) ，将当前位置移到本行开头</td> <td>013</td></tr> <tr><td><strong>\t</strong></td> <td><strong>水平制表(HT)  （跳到下一个TAB位置）</strong></td> <td><strong>009</strong></td></tr> <tr><td>\v</td> <td>垂直制表(VT)</td> <td>011</td></tr> <tr><td><strong>\\</strong></td> <td><strong>代表一个反斜线字符&quot;&quot;</strong></td> <td><strong>092</strong></td></tr> <tr><td>'</td> <td>代表一个单引号（撇号）字符</td> <td>039</td></tr> <tr><td>&quot;</td> <td>代表一个双引号字符</td> <td>034</td></tr> <tr><td>?</td> <td>代表一个问号</td> <td>063</td></tr> <tr><td>\0</td> <td>数字0</td> <td>000</td></tr> <tr><td>\ddd</td> <td>8进制转义字符，d范围0~7</td> <td>3位8进制</td></tr> <tr><td>\xhh</td> <td>16进制转义字符，h范围0~9，a~f，A~F</td> <td>3位16进制</td></tr></tbody></table> <p>示例：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+	
+	
+	cout &lt;&lt; &quot;\\&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;\tHello&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;\n&quot; &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="_2-6-字符串型"><a href="#_2-6-字符串型" class="header-anchor">#</a> 2.6 字符串型</h3> <p><strong>作用</strong>：用于表示一串字符</p> <p><strong>两种风格</strong></p> <ol><li><p><strong>C风格字符串</strong>： <code>char 变量名[] = &quot;字符串值&quot;</code></p> <p>示例：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	char str1[] = &quot;hello world&quot;;
+	cout &lt;&lt; str1 &lt;&lt; endl;
+    
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></li></ol> <blockquote><p>注意：C风格的字符串要用双引号括起来</p></blockquote> <ol><li><p><strong>C++风格字符串</strong>：  <code>string 变量名 = &quot;字符串值&quot;</code></p> <p>示例：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	string str = &quot;hello world&quot;;
+	cout &lt;&lt; str &lt;&lt; endl;
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></li></ol> <blockquote><p>注意：C++风格字符串，需要加入头文件==#include&lt;string&gt;==</p></blockquote> <h3 id="_2-7-布尔类型-bool"><a href="#_2-7-布尔类型-bool" class="header-anchor">#</a> 2.7 布尔类型 bool</h3> <p>**作用：**布尔数据类型代表真或假的值</p> <p>bool类型只有两个值：</p> <ul><li>true  --- 真（本质是1）</li> <li>false --- 假（本质是0）</li></ul> <p><strong>bool类型占==1个字节==大小</strong></p> <p>示例：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	bool flag = true;
+	cout &lt;&lt; flag &lt;&lt; endl; // 1
+
+	flag = false;
+	cout &lt;&lt; flag &lt;&lt; endl; // 0
+
+	cout &lt;&lt; &quot;size of bool = &quot; &lt;&lt; sizeof(bool) &lt;&lt; endl; //1
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="_2-8-数据的输入"><a href="#_2-8-数据的输入" class="header-anchor">#</a> 2.8 数据的输入</h3> <p><strong>作用：用于从键盘获取数据</strong></p> <p>**关键字：**cin</p> <p><strong>语法：</strong> <code>cin &gt;&gt; 变量</code></p> <p>示例：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main(){
+
+	//整型输入
+	int a = 0;
+	cout &lt;&lt; &quot;请输入整型变量：&quot; &lt;&lt; endl;
+	cin &gt;&gt; a;
+	cout &lt;&lt; a &lt;&lt; endl;
+
+	//浮点型输入
+	double d = 0;
+	cout &lt;&lt; &quot;请输入浮点型变量：&quot; &lt;&lt; endl;
+	cin &gt;&gt; d;
+	cout &lt;&lt; d &lt;&lt; endl;
+
+	//字符型输入
+	char ch = 0;
+	cout &lt;&lt; &quot;请输入字符型变量：&quot; &lt;&lt; endl;
+	cin &gt;&gt; ch;
+	cout &lt;&lt; ch &lt;&lt; endl;
+
+	//字符串型输入
+	string str;
+	cout &lt;&lt; &quot;请输入字符串型变量：&quot; &lt;&lt; endl;
+	cin &gt;&gt; str;
+	cout &lt;&lt; str &lt;&lt; endl;
+
+	//布尔类型输入
+	bool flag = true;
+	cout &lt;&lt; &quot;请输入布尔型变量：&quot; &lt;&lt; endl;
+	cin &gt;&gt; flag;
+	cout &lt;&lt; flag &lt;&lt; endl;
+	system(&quot;pause&quot;);
+	return EXIT_SUCCESS;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><h2 id="_3-运算符"><a href="#_3-运算符" class="header-anchor">#</a> 3 运算符</h2> <p>**作用：**用于执行代码的运算</p> <p>本章我们主要讲解以下几类运算符：</p> <table><thead><tr><th><strong>运算符类型</strong></th> <th><strong>作用</strong></th></tr></thead> <tbody><tr><td>算术运算符</td> <td>用于处理四则运算</td></tr> <tr><td>赋值运算符</td> <td>用于将表达式的值赋给变量</td></tr> <tr><td>比较运算符</td> <td>用于表达式的比较，并返回一个真值或假值</td></tr> <tr><td>逻辑运算符</td> <td>用于根据表达式的值返回真值或假值</td></tr></tbody></table> <h3 id="_3-1-算术运算符"><a href="#_3-1-算术运算符" class="header-anchor">#</a> 3.1 算术运算符</h3> <p><strong>作用</strong>：用于处理四则运算</p> <p>算术运算符包括以下符号：</p> <table><thead><tr><th><strong>运算符</strong></th> <th><strong>术语</strong></th> <th><strong>示例</strong></th> <th><strong>结果</strong></th></tr></thead> <tbody><tr><td>+</td> <td>正号</td> <td>+3</td> <td>3</td></tr> <tr><td>-</td> <td>负号</td> <td>-3</td> <td>-3</td></tr> <tr><td>+</td> <td>加</td> <td>10 + 5</td> <td>15</td></tr> <tr><td>-</td> <td>减</td> <td>10 - 5</td> <td>5</td></tr> <tr><td>*</td> <td>乘</td> <td>10 * 5</td> <td>50</td></tr> <tr><td>/</td> <td>除</td> <td>10 / 5</td> <td>2</td></tr> <tr><td>%</td> <td>取模(取余)</td> <td>10 % 3</td> <td>1</td></tr> <tr><td>++</td> <td>前置递增</td> <td>a=2; b=++a;</td> <td>a=3; b=3;</td></tr> <tr><td>++</td> <td>后置递增</td> <td>a=2; b=a++;</td> <td>a=3; b=2;</td></tr> <tr><td>--</td> <td>前置递减</td> <td>a=2; b=--a;</td> <td>a=1; b=1;</td></tr> <tr><td>--</td> <td>后置递减</td> <td>a=2; b=a--;</td> <td>a=1; b=2;</td></tr></tbody></table> <p><strong>示例1：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//加减乘除
+int main() {
+
+	int a1 = 10;
+	int b1 = 3;
+
+	cout &lt;&lt; a1 + b1 &lt;&lt; endl;
+	cout &lt;&lt; a1 - b1 &lt;&lt; endl;
+	cout &lt;&lt; a1 * b1 &lt;&lt; endl;
+	cout &lt;&lt; a1 / b1 &lt;&lt; endl;  //两个整数相除结果依然是整数
+
+	int a2 = 10;
+	int b2 = 20;
+	cout &lt;&lt; a2 / b2 &lt;&lt; endl; 
+
+	int a3 = 10;
+	int b3 = 0;
+	//cout &lt;&lt; a3 / b3 &lt;&lt; endl; //报错，除数不可以为0
+
+
+	//两个小数可以相除
+	double d1 = 0.5;
+	double d2 = 0.25;
+	cout &lt;&lt; d1 / d2 &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><blockquote><p>总结：在除法运算中，除数不能为0</p></blockquote> <p><strong>示例2：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//取模
+int main() {
+
+	int a1 = 10;
+	int b1 = 3;
+
+	cout &lt;&lt; 10 % 3 &lt;&lt; endl;
+
+	int a2 = 10;
+	int b2 = 20;
+
+	cout &lt;&lt; a2 % b2 &lt;&lt; endl;
+
+	int a3 = 10;
+	int b3 = 0;
+
+	//cout &lt;&lt; a3 % b3 &lt;&lt; endl; //取模运算时，除数也不能为0
+
+	//两个小数不可以取模
+	double d1 = 3.14;
+	double d2 = 1.1;
+
+	//cout &lt;&lt; d1 % d2 &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><blockquote><p>总结：只有整型变量可以进行取模运算</p></blockquote> <p><strong>示例3：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//递增
+int main() {
+
+	//后置递增
+	int a = 10;
+	a++; //等价于a = a + 1
+	cout &lt;&lt; a &lt;&lt; endl; // 11
+
+	//前置递增
+	int b = 10;
+	++b;
+	cout &lt;&lt; b &lt;&lt; endl; // 11
+
+	//区别
+	//前置递增先对变量进行++，再计算表达式
+	int a2 = 10;
+	int b2 = ++a2 * 10;
+	cout &lt;&lt; b2 &lt;&lt; endl;
+
+	//后置递增先计算表达式，后对变量进行++
+	int a3 = 10;
+	int b3 = a3++ * 10;
+	cout &lt;&lt; b3 &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><blockquote><p>总结：前置递增先对变量进行++，再计算表达式，后置递增相反</p></blockquote> <h3 id="_3-2-赋值运算符"><a href="#_3-2-赋值运算符" class="header-anchor">#</a> 3.2 赋值运算符</h3> <p>**作用：**用于将表达式的值赋给变量</p> <p>赋值运算符包括以下几个符号：</p> <table><thead><tr><th><strong>运算符</strong></th> <th><strong>术语</strong></th> <th><strong>示例</strong></th> <th><strong>结果</strong></th></tr></thead> <tbody><tr><td>=</td> <td>赋值</td> <td>a=2; b=3;</td> <td>a=2; b=3;</td></tr> <tr><td>+=</td> <td>加等于</td> <td>a=0; a+=2;</td> <td>a=2;</td></tr> <tr><td>-=</td> <td>减等于</td> <td>a=5; a-=3;</td> <td>a=2;</td></tr> <tr><td>*=</td> <td>乘等于</td> <td>a=2; a*=2;</td> <td>a=4;</td></tr> <tr><td>/=</td> <td>除等于</td> <td>a=4; a/=2;</td> <td>a=2;</td></tr> <tr><td>%=</td> <td>模等于</td> <td>a=3; a%2;</td> <td>a=1;</td></tr></tbody></table> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	//赋值运算符
+
+	// =
+	int a = 10;
+	a = 100;
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+
+	// +=
+	a = 10;
+	a += 2; // a = a + 2;
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+
+	// -=
+	a = 10;
+	a -= 2; // a = a - 2
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+
+	// *=
+	a = 10;
+	a *= 2; // a = a * 2
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+
+	// /=
+	a = 10;
+	a /= 2;  // a = a / 2;
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+
+	// %=
+	a = 10;
+	a %= 2;  // a = a % 2;
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><h3 id="_3-3-比较运算符"><a href="#_3-3-比较运算符" class="header-anchor">#</a> 3.3 比较运算符</h3> <p>**作用：**用于表达式的比较，并返回一个真值或假值</p> <p>比较运算符有以下符号：</p> <table><thead><tr><th><strong>运算符</strong></th> <th><strong>术语</strong></th> <th><strong>示例</strong></th> <th><strong>结果</strong></th></tr></thead> <tbody><tr><td>==</td> <td>相等于</td> <td>4 == 3</td> <td>0</td></tr> <tr><td>!=</td> <td>不等于</td> <td>4 != 3</td> <td>1</td></tr> <tr><td>&lt;</td> <td>小于</td> <td>4 &lt; 3</td> <td>0</td></tr> <tr><td>&gt;</td> <td>大于</td> <td>4 &gt; 3</td> <td>1</td></tr> <tr><td>&lt;=</td> <td>小于等于</td> <td>4 &lt;= 3</td> <td>0</td></tr> <tr><td>&gt;=</td> <td>大于等于</td> <td>4 &gt;= 1</td> <td>1</td></tr></tbody></table> <p>示例：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	int a = 10;
+	int b = 20;
+
+	cout &lt;&lt; (a == b) &lt;&lt; endl; // 0 
+
+	cout &lt;&lt; (a != b) &lt;&lt; endl; // 1
+
+	cout &lt;&lt; (a &gt; b) &lt;&lt; endl; // 0
+
+	cout &lt;&lt; (a &lt; b) &lt;&lt; endl; // 1
+
+	cout &lt;&lt; (a &gt;= b) &lt;&lt; endl; // 0
+
+	cout &lt;&lt; (a &lt;= b) &lt;&lt; endl; // 1
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><blockquote><p>注意：C和C++ 语言的比较运算中， <mark>“真”用数字“1”来表示， “假”用数字“0”来表示。</mark></p></blockquote> <h3 id="_3-4-逻辑运算符"><a href="#_3-4-逻辑运算符" class="header-anchor">#</a> 3.4 逻辑运算符</h3> <p>**作用：**用于根据表达式的值返回真值或假值</p> <p>逻辑运算符有以下符号：</p> <table><thead><tr><th><strong>运算符</strong></th> <th><strong>术语</strong></th> <th><strong>示例</strong></th> <th><strong>结果</strong></th></tr></thead> <tbody><tr><td>!</td> <td>非</td> <td>!a</td> <td>如果a为假，则!a为真；  如果a为真，则!a为假。</td></tr> <tr><td>&amp;&amp;</td> <td>与</td> <td>a &amp;&amp; b</td> <td>如果a和b都为真，则结果为真，否则为假。</td></tr> <tr><td>||</td> <td>或</td> <td>a || b</td> <td>如果a和b有一个为真，则结果为真，二者都为假时，结果为假。</td></tr></tbody></table> <p>**示例1：**逻辑非</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//逻辑运算符  --- 非
+int main() {
+
+	int a = 10;
+
+	cout &lt;&lt; !a &lt;&lt; endl; // 0
+
+	cout &lt;&lt; !!a &lt;&lt; endl; // 1
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><blockquote><p>总结： 真变假，假变真</p></blockquote> <p>**示例2：**逻辑与</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//逻辑运算符  --- 与
+int main() {
+
+	int a = 10;
+	int b = 10;
+
+	cout &lt;&lt; (a &amp;&amp; b) &lt;&lt; endl;// 1
+
+	a = 10;
+	b = 0;
+
+	cout &lt;&lt; (a &amp;&amp; b) &lt;&lt; endl;// 0 
+
+	a = 0;
+	b = 0;
+
+	cout &lt;&lt; (a &amp;&amp; b) &lt;&lt; endl;// 0
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><blockquote><p>总结：逻辑==与==运算符总结： <mark>同真为真，其余为假</mark></p></blockquote> <p>**示例3：**逻辑或</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//逻辑运算符  --- 或
+int main() {
+
+	int a = 10;
+	int b = 10;
+
+	cout &lt;&lt; (a || b) &lt;&lt; endl;// 1
+
+	a = 10;
+	b = 0;
+
+	cout &lt;&lt; (a || b) &lt;&lt; endl;// 1 
+
+	a = 0;
+	b = 0;
+
+	cout &lt;&lt; (a || b) &lt;&lt; endl;// 0
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><blockquote><p>逻辑==或==运算符总结： <mark>同假为假，其余为真</mark></p></blockquote> <h2 id="_4-程序流程结构"><a href="#_4-程序流程结构" class="header-anchor">#</a> 4 程序流程结构</h2> <p>C/C++支持最基本的三种程序运行结构：<mark>顺序结构、选择结构、循环结构</mark></p> <ul><li>顺序结构：程序按顺序执行，不发生跳转</li> <li>选择结构：依据条件是否满足，有选择的执行相应功能</li> <li>循环结构：依据条件是否满足，循环多次执行某段代码</li></ul> <h3 id="_4-1-选择结构"><a href="#_4-1-选择结构" class="header-anchor">#</a> 4.1 选择结构</h3> <h4 id="_4-1-1-if语句"><a href="#_4-1-1-if语句" class="header-anchor">#</a> 4.1.1 if语句</h4> <p>**作用：**执行满足条件的语句</p> <p>if语句的三种形式</p> <ul><li><p>单行格式if语句</p></li> <li><p>多行格式if语句</p></li> <li><p>多条件的if语句</p></li></ul> <ol><li><p>单行格式if语句：<code>if(条件){ 条件满足执行的语句 }</code></p> <p><img src="assets/clip_image002.png" alt="img"></p> <p>示例：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	//选择结构-单行if语句
+	//输入一个分数，如果分数大于600分，视为考上一本大学，并在屏幕上打印
+
+	int score = 0;
+	cout &lt;&lt; &quot;请输入一个分数：&quot; &lt;&lt; endl;
+	cin &gt;&gt; score;
+
+	cout &lt;&lt; &quot;您输入的分数为： &quot; &lt;&lt; score &lt;&lt; endl;
+
+	//if语句
+	//注意事项，在if判断语句后面，不要加分号
+	if (score &gt; 600)
+	{
+		cout &lt;&lt; &quot;我考上了一本大学！！！&quot; &lt;&lt; endl;
+	}
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div></li></ol> <blockquote><p>注意：if条件表达式后不要加分号</p></blockquote> <ol start="2"><li>多行格式if语句：<code>if(条件){ 条件满足执行的语句 }else{ 条件不满足执行的语句 };</code></li></ol> <p><img src="assets/clip_image002-1541662519170.png" alt="img"></p> <p>示例：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	int score = 0;
+
+	cout &lt;&lt; &quot;请输入考试分数：&quot; &lt;&lt; endl;
+
+	cin &gt;&gt; score;
+
+	if (score &gt; 600)
+	{
+		cout &lt;&lt; &quot;我考上了一本大学&quot; &lt;&lt; endl;
+	}
+	else
+	{
+		cout &lt;&lt; &quot;我未考上一本大学&quot; &lt;&lt; endl;
+	}
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><ol start="3"><li>多条件的if语句：<code>if(条件1){ 条件1满足执行的语句 }else if(条件2){条件2满足执行的语句}... else{ 都不满足执行的语句}</code></li></ol> <p><img src="assets/clip_image002-1541662566808.png" alt="img"></p> <p>示例：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>	int main() {
+
+	int score = 0;
+
+	cout &lt;&lt; &quot;请输入考试分数：&quot; &lt;&lt; endl;
+
+	cin &gt;&gt; score;
+
+	if (score &gt; 600)
+	{
+		cout &lt;&lt; &quot;我考上了一本大学&quot; &lt;&lt; endl;
+	}
+	else if (score &gt; 500)
+	{
+		cout &lt;&lt; &quot;我考上了二本大学&quot; &lt;&lt; endl;
+	}
+	else if (score &gt; 400)
+	{
+		cout &lt;&lt; &quot;我考上了三本大学&quot; &lt;&lt; endl;
+	}
+	else
+	{
+		cout &lt;&lt; &quot;我未考上本科&quot; &lt;&lt; endl;
+	}
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><p><strong>嵌套if语句</strong>：在if语句中，可以嵌套使用if语句，达到更精确的条件判断</p> <p>案例需求：</p> <ul><li>提示用户输入一个高考考试分数，根据分数做如下判断</li> <li>分数如果大于600分视为考上一本，大于500分考上二本，大于400考上三本，其余视为未考上本科；</li> <li>在一本分数中，如果大于700分，考入北大，大于650分，考入清华，大于600考入人大。</li></ul> <p><strong>示例：</strong></p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	int score = 0;
+
+	cout &lt;&lt; &quot;请输入考试分数：&quot; &lt;&lt; endl;
+
+	cin &gt;&gt; score;
+
+	if (score &gt; 600)
+	{
+		cout &lt;&lt; &quot;我考上了一本大学&quot; &lt;&lt; endl;
+		if (score &gt; 700)
+		{
+			cout &lt;&lt; &quot;我考上了北大&quot; &lt;&lt; endl;
+		}
+		else if (score &gt; 650)
+		{
+			cout &lt;&lt; &quot;我考上了清华&quot; &lt;&lt; endl;
+		}
+		else
+		{
+			cout &lt;&lt; &quot;我考上了人大&quot; &lt;&lt; endl;
+		}
+		
+	}
+	else if (score &gt; 500)
+	{
+		cout &lt;&lt; &quot;我考上了二本大学&quot; &lt;&lt; endl;
+	}
+	else if (score &gt; 400)
+	{
+		cout &lt;&lt; &quot;我考上了三本大学&quot; &lt;&lt; endl;
+	}
+	else
+	{
+		cout &lt;&lt; &quot;我未考上本科&quot; &lt;&lt; endl;
+	}
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br></div></div><p><strong>练习案例：</strong> 三只小猪称体重</p> <p>有三只小猪ABC，请分别输入三只小猪的体重，并且判断哪只小猪最重？<img src="https://whfox-1308375493.cos.ap-nanjing.myqcloud.com/202304041643285.jpg" alt="三只小猪"></p> <h4 id="_4-1-2-三目运算符"><a href="#_4-1-2-三目运算符" class="header-anchor">#</a> 4.1.2 三目运算符</h4> <p><strong>作用：</strong> 通过三目运算符实现简单的判断</p> <p><strong>语法：</strong><code>表达式1 ? 表达式2 ：表达式3</code></p> <p><strong>解释：</strong></p> <p>如果表达式1的值为真，执行表达式2，并返回表达式2的结果；</p> <p>如果表达式1的值为假，执行表达式3，并返回表达式3的结果。</p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	int a = 10;
+	int b = 20;
+	int c = 0;
+
+	c = a &gt; b ? a : b;
+	cout &lt;&lt; &quot;c = &quot; &lt;&lt; c &lt;&lt; endl;
+
+	//C++中三目运算符返回的是变量,可以继续赋值
+
+	(a &gt; b ? a : b) = 100;
+
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+	cout &lt;&lt; &quot;b = &quot; &lt;&lt; b &lt;&lt; endl;
+	cout &lt;&lt; &quot;c = &quot; &lt;&lt; c &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><blockquote><p>总结：和if语句比较，三目运算符优点是短小整洁，缺点是如果用嵌套，结构不清晰</p></blockquote> <h4 id="_4-1-3-switch语句"><a href="#_4-1-3-switch语句" class="header-anchor">#</a> 4.1.3 switch语句</h4> <p>**作用：**执行多条件分支语句</p> <p><strong>语法：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>switch(表达式)
+
+{
+
+	case 结果1：执行语句;break;
+
+	case 结果2：执行语句;break;
+
+	...
+
+	default:执行语句;break;
+
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	//请给电影评分 
+	//10 ~ 9   经典   
+	// 8 ~ 7   非常好
+	// 6 ~ 5   一般
+	// 5分以下 烂片
+
+	int score = 0;
+	cout &lt;&lt; &quot;请给电影打分&quot; &lt;&lt; endl;
+	cin &gt;&gt; score;
+
+	switch (score)
+	{
+	case 10:
+	case 9:
+		cout &lt;&lt; &quot;经典&quot; &lt;&lt; endl;
+		break;
+	case 8:
+		cout &lt;&lt; &quot;非常好&quot; &lt;&lt; endl;
+		break;
+	case 7:
+	case 6:
+		cout &lt;&lt; &quot;一般&quot; &lt;&lt; endl;
+		break;
+	default:
+		cout &lt;&lt; &quot;烂片&quot; &lt;&lt; endl;
+		break;
+	}
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><blockquote><p>注意1：switch语句中表达式类型只能是整型或者字符型</p></blockquote> <blockquote><p>注意2：case里如果没有break，那么程序会一直向下执行</p></blockquote> <blockquote><p>总结：与if语句比，对于多条件判断时，switch的结构清晰，执行效率高，缺点是switch不可以判断区间</p></blockquote> <h3 id="_4-2-循环结构"><a href="#_4-2-循环结构" class="header-anchor">#</a> 4.2 循环结构</h3> <h4 id="_4-2-1-while循环语句"><a href="#_4-2-1-while循环语句" class="header-anchor">#</a> 4.2.1 while循环语句</h4> <p>**作用：**满足循环条件，执行循环语句</p> <p><strong>语法：</strong><code>while(循环条件){ 循环语句 }</code></p> <p><strong>解释：</strong><mark>只要循环条件的结果为真，就执行循环语句</mark></p> <p><img src="https://whfox-1308375493.cos.ap-nanjing.myqcloud.com/202304041643441.png" alt="img"></p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	int num = 0;
+	while (num &lt; 10)
+	{
+		cout &lt;&lt; &quot;num = &quot; &lt;&lt; num &lt;&lt; endl;
+		num++;
+	}
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><blockquote><p>注意：在执行循环语句时候，程序必须提供跳出循环的出口，否则出现死循环</p></blockquote> <p><strong>while循环练习案例：</strong><mark>猜数字</mark></p> <p>**案例描述：**系统随机生成一个1到100之间的数字，玩家进行猜测，如果猜错，提示玩家数字过大或过小，如果猜对恭喜玩家胜利，并且退出游戏。</p> <p><img src="https://whfox-1308375493.cos.ap-nanjing.myqcloud.com/202304041643385.jpg" alt="猜数字"></p> <h4 id="_4-2-2-do-while循环语句"><a href="#_4-2-2-do-while循环语句" class="header-anchor">#</a> 4.2.2 do...while循环语句</h4> <p><strong>作用：</strong> 满足循环条件，执行循环语句</p> <p><strong>语法：</strong> <code>do{ 循环语句 } while(循环条件);</code></p> <p>**注意：**与while的区别在于==do...while会先执行一次循环语句==，再判断循环条件</p> <p><img src="https://whfox-1308375493.cos.ap-nanjing.myqcloud.com/202304041643078.png" alt="img"></p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	int num = 0;
+
+	do
+	{
+		cout &lt;&lt; num &lt;&lt; endl;
+		num++;
+
+	} while (num &lt; 10);
+	
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><blockquote><p>总结：与while循环区别在于，do...while先执行一次循环语句，再判断循环条件</p></blockquote> <p><strong>练习案例：水仙花数</strong></p> <p>**案例描述：**水仙花数是指一个 3 位数，它的每个位上的数字的 3次幂之和等于它本身</p> <p>例如：1^3 + 5^3+ 3^3 = 153</p> <p>请利用do...while语句，求出所有3位数中的水仙花数</p> <h4 id="_4-2-3-for循环语句"><a href="#_4-2-3-for循环语句" class="header-anchor">#</a> 4.2.3 for循环语句</h4> <p><strong>作用：</strong> 满足循环条件，执行循环语句</p> <p><strong>语法：</strong><code>for(起始表达式;条件表达式;末尾循环体) { 循环语句; }</code></p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	for (int i = 0; i &lt; 10; i++)
+	{
+		cout &lt;&lt; i &lt;&lt; endl;
+	}
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><strong>详解：</strong></p> <p><img src="https://whfox-1308375493.cos.ap-nanjing.myqcloud.com/202304041643220.png" alt="1541673704101"></p> <blockquote><p>注意：for循环中的表达式，要用分号进行分隔</p></blockquote> <blockquote><p>总结：while , do...while, for都是开发中常用的循环语句，for循环结构比较清晰，比较常用</p></blockquote> <p><strong>练习案例：敲桌子</strong></p> <p>案例描述：从1开始数到数字100， 如果数字个位含有7，或者数字十位含有7，或者该数字是7的倍数，我们打印敲桌子，其余数字直接打印输出。</p> <h4 id="_4-2-4-嵌套循环"><a href="#_4-2-4-嵌套循环" class="header-anchor">#</a> 4.2.4 嵌套循环</h4> <p><strong>作用：</strong> 在循环体中再嵌套一层循环，解决一些实际问题</p> <p>例如我们想在屏幕中打印如下图片，就需要利用嵌套循环</p> <p><img src="https://whfox-1308375493.cos.ap-nanjing.myqcloud.com/202304041643943.png" alt="1541676003486"></p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	//外层循环执行1次，内层循环执行1轮
+	for (int i = 0; i &lt; 10; i++)
+	{
+		for (int j = 0; j &lt; 10; j++)
+		{
+			cout &lt;&lt; &quot;*&quot; &lt;&lt; &quot; &quot;;
+		}
+		cout &lt;&lt; endl;
+	}
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>**练习案例：**乘法口诀表</p> <p>案例描述：利用嵌套循环，实现九九乘法表</p> <h3 id="_4-3-跳转语句"><a href="#_4-3-跳转语句" class="header-anchor">#</a> 4.3 跳转语句</h3> <h4 id="_4-3-1-break语句"><a href="#_4-3-1-break语句" class="header-anchor">#</a> 4.3.1 break语句</h4> <p><strong>作用:</strong> 用于跳出==选择结构==或者==循环结构==</p> <p>break使用的时机：</p> <ul><li>出现在switch条件语句中，作用是终止case并跳出switch</li> <li>出现在循环语句中，作用是跳出当前的循环语句</li> <li>出现在嵌套循环中，跳出最近的内层循环语句</li></ul> <p><strong>示例1：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+	//1、在switch 语句中使用break
+	cout &lt;&lt; &quot;请选择您挑战副本的难度：&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;1、普通&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;2、中等&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;3、困难&quot; &lt;&lt; endl;
+
+	int num = 0;
+
+	cin &gt;&gt; num;
+
+	switch (num)
+	{
+	case 1:
+		cout &lt;&lt; &quot;您选择的是普通难度&quot; &lt;&lt; endl;
+		break;
+	case 2:
+		cout &lt;&lt; &quot;您选择的是中等难度&quot; &lt;&lt; endl;
+		break;
+	case 3:
+		cout &lt;&lt; &quot;您选择的是困难难度&quot; &lt;&lt; endl;
+		break;
+	}
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p><strong>示例2：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+	//2、在循环语句中用break
+	for (int i = 0; i &lt; 10; i++)
+	{
+		if (i == 5)
+		{
+			break; //跳出循环语句
+		}
+		cout &lt;&lt; i &lt;&lt; endl;
+	}
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p><strong>示例3：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+	//在嵌套循环语句中使用break，退出内层循环
+	for (int i = 0; i &lt; 10; i++)
+	{
+		for (int j = 0; j &lt; 10; j++)
+		{
+			if (j == 5)
+			{
+				break;
+			}
+			cout &lt;&lt; &quot;*&quot; &lt;&lt; &quot; &quot;;
+		}
+		cout &lt;&lt; endl;
+	}
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h4 id="_4-3-2-continue语句"><a href="#_4-3-2-continue语句" class="header-anchor">#</a> 4.3.2 continue语句</h4> <p>**作用：**在==循环语句==中，跳过本次循环中余下尚未执行的语句，继续执行下一次循环</p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	for (int i = 0; i &lt; 100; i++)
+	{
+		if (i % 2 == 0)
+		{
+			continue;
+		}
+		cout &lt;&lt; i &lt;&lt; endl;
+	}
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><blockquote><p>注意：continue并没有使整个循环终止，而break会跳出循环</p></blockquote> <h4 id="_4-3-3-goto语句"><a href="#_4-3-3-goto语句" class="header-anchor">#</a> 4.3.3 goto语句</h4> <p>**作用：**可以无条件跳转语句</p> <p><strong>语法：</strong> <code>goto 标记;</code></p> <p>**解释：**如果标记的名称存在，执行到goto语句时，会跳转到标记的位置</p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	cout &lt;&lt; &quot;1&quot; &lt;&lt; endl;
+
+	goto FLAG;
+
+	cout &lt;&lt; &quot;2&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;3&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;4&quot; &lt;&lt; endl;
+
+	FLAG:
+
+	cout &lt;&lt; &quot;5&quot; &lt;&lt; endl;
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><blockquote><p>注意：在程序中不建议使用goto语句，以免造成程序流程混乱</p></blockquote> <h2 id="_5-数组"><a href="#_5-数组" class="header-anchor">#</a> 5 数组</h2> <h3 id="_5-1-概述"><a href="#_5-1-概述" class="header-anchor">#</a> 5.1 概述</h3> <p>所谓数组，就是一个集合，里面存放了相同类型的数据元素</p> <p>**特点1：**数组中的每个==数据元素都是相同的数据类型==</p> <p>**特点2：**数组是由==连续的内存==位置组成的</p> <h3 id="_5-2-一维数组"><a href="#_5-2-一维数组" class="header-anchor">#</a> 5.2 一维数组</h3> <h4 id="_5-2-1-一维数组定义方式"><a href="#_5-2-1-一维数组定义方式" class="header-anchor">#</a> 5.2.1 一维数组定义方式</h4> <p>一维数组定义的三种方式：</p> <ol><li><code>数据类型 数组名[ 数组长度 ];</code></li> <li><code>数据类型 数组名[ 数组长度 ] = { 值1，值2 ...};</code></li> <li><code>数据类型 数组名[ ] = { 值1，值2 ...};</code></li></ol> <p>示例</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	//定义方式1
+	//数据类型 数组名[元素个数];
+	int score[10];
+
+	//利用下标赋值
+	score[0] = 100;
+	score[1] = 99;
+	score[2] = 85;
+
+	//利用下标输出
+	cout &lt;&lt; score[0] &lt;&lt; endl;
+	cout &lt;&lt; score[1] &lt;&lt; endl;
+	cout &lt;&lt; score[2] &lt;&lt; endl;
+
+
+	//第二种定义方式
+	//数据类型 数组名[元素个数] =  {值1，值2 ，值3 ...};
+	//如果{}内不足10个数据，剩余数据用0补全
+	int score2[10] = { 100, 90,80,70,60,50,40,30,20,10 };
+	
+	//逐个输出
+	//cout &lt;&lt; score2[0] &lt;&lt; endl;
+	//cout &lt;&lt; score2[1] &lt;&lt; endl;
+
+	//一个一个输出太麻烦，因此可以利用循环进行输出
+	for (int i = 0; i &lt; 10; i++)
+	{
+		cout &lt;&lt; score2[i] &lt;&lt; endl;
+	}
+
+	//定义方式3
+	//数据类型 数组名[] =  {值1，值2 ，值3 ...};
+	int score3[] = { 100,90,80,70,60,50,40,30,20,10 };
+
+	for (int i = 0; i &lt; 10; i++)
+	{
+		cout &lt;&lt; score3[i] &lt;&lt; endl;
+	}
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br></div></div><blockquote><p>总结1：数组名的命名规范与变量名命名规范一致，不要和变量重名</p></blockquote> <blockquote><p>总结2：数组中下标是从0开始索引</p></blockquote> <h4 id="_5-2-2-一维数组数组名"><a href="#_5-2-2-一维数组数组名" class="header-anchor">#</a> 5.2.2 一维数组数组名</h4> <p>一维数组名称的<strong>用途</strong>：</p> <ol><li>可以统计整个数组在内存中的长度</li> <li>可以获取数组在内存中的首地址</li></ol> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	//数组名用途
+	//1、可以获取整个数组占用内存空间大小
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+
+	cout &lt;&lt; &quot;整个数组所占内存空间为： &quot; &lt;&lt; sizeof(arr) &lt;&lt; endl;
+	cout &lt;&lt; &quot;每个元素所占内存空间为： &quot; &lt;&lt; sizeof(arr[0]) &lt;&lt; endl;
+	cout &lt;&lt; &quot;数组的元素个数为： &quot; &lt;&lt; sizeof(arr) / sizeof(arr[0]) &lt;&lt; endl;
+
+	//2、可以通过数组名获取到数组首地址
+	cout &lt;&lt; &quot;数组首地址为： &quot; &lt;&lt; (int)arr &lt;&lt; endl;
+	cout &lt;&lt; &quot;数组中第一个元素地址为： &quot; &lt;&lt; (int)&amp;arr[0] &lt;&lt; endl;
+	cout &lt;&lt; &quot;数组中第二个元素地址为： &quot; &lt;&lt; (int)&amp;arr[1] &lt;&lt; endl;
+
+	//arr = 100; 错误，数组名是常量，因此不可以赋值
+
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><blockquote><p>注意：数组名是常量，不可以赋值</p></blockquote> <blockquote><p>总结1：直接打印数组名，可以查看数组所占内存的首地址</p></blockquote> <blockquote><p>总结2：对数组名进行sizeof，可以获取整个数组占内存空间的大小</p></blockquote> <p><strong>练习案例1</strong>：五只小猪称体重</p> <p><strong>案例描述：</strong></p> <p>在一个数组中记录了五只小猪的体重，如：int arr[5] = {300,350,200,400,250};</p> <p>找出并打印最重的小猪体重。</p> <p>**练习案例2：**数组元素逆置</p> <p>**案例描述：**请声明一个5个元素的数组，并且将元素逆置.</p> <p>(如原数组元素为：1,3,2,5,4;逆置后输出结果为:4,5,2,3,1);</p> <h4 id="_5-2-3-冒泡排序"><a href="#_5-2-3-冒泡排序" class="header-anchor">#</a> 5.2.3 冒泡排序</h4> <p><strong>作用：</strong> 最常用的排序算法，对数组内元素进行排序</p> <ol><li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li> <li>对每一对相邻元素做同样的工作，执行完毕后，找到第一个最大值。</li> <li>重复以上的步骤，每次比较次数-1，直到不需要比较</li></ol> <p><img src="https://whfox-1308375493.cos.ap-nanjing.myqcloud.com/202304041644480.png" alt="1541905327273"></p> <p><strong>示例：</strong> 将数组 { 4,2,8,0,5,7,1,3,9 } 进行升序排序</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	int arr[9] = { 4,2,8,0,5,7,1,3,9 };
+
+	for (int i = 0; i &lt; 9 - 1; i++)
+	{
+		for (int j = 0; j &lt; 9 - 1 - i; j++)
+		{
+			if (arr[j] &gt; arr[j + 1])
+			{
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+
+	for (int i = 0; i &lt; 9; i++)
+	{
+		cout &lt;&lt; arr[i] &lt;&lt; endl;
+	}
+    
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h3 id="_5-3-二维数组"><a href="#_5-3-二维数组" class="header-anchor">#</a> 5.3 二维数组</h3> <p>二维数组就是在一维数组上，多加一个维度。</p> <h4 id="_5-3-1-二维数组定义方式"><a href="#_5-3-1-二维数组定义方式" class="header-anchor">#</a> 5.3.1 二维数组定义方式</h4> <p>二维数组定义的四种方式：</p> <ol><li><code>数据类型 数组名[ 行数 ][ 列数 ];</code></li> <li><code>数据类型 数组名[ 行数 ][ 列数 ] = { {数据1，数据2 } ，{数据3，数据4 } };</code></li> <li><code>数据类型 数组名[ 行数 ][ 列数 ] = { 数据1，数据2，数据3，数据4};</code></li> <li><code>数据类型 数组名[ ][ 列数 ] = { 数据1，数据2，数据3，数据4};</code></li></ol> <blockquote><p>建议：以上4种定义方式，利用==第二种更加直观，提高代码的可读性==</p></blockquote> <p>示例：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	//方式1  
+	//数组类型 数组名 [行数][列数]
+	int arr[2][3];
+	arr[0][0] = 1;
+	arr[0][1] = 2;
+	arr[0][2] = 3;
+	arr[1][0] = 4;
+	arr[1][1] = 5;
+	arr[1][2] = 6;
+
+	for (int i = 0; i &lt; 2; i++)
+	{
+		for (int j = 0; j &lt; 3; j++)
+		{
+			cout &lt;&lt; arr[i][j] &lt;&lt; &quot; &quot;;
+		}
+		cout &lt;&lt; endl;
+	}
+
+	//方式2 
+	//数据类型 数组名[行数][列数] = { {数据1，数据2 } ，{数据3，数据4 } };
+	int arr2[2][3] =
+	{
+		{1,2,3},
+		{4,5,6}
+	};
+
+	//方式3
+	//数据类型 数组名[行数][列数] = { 数据1，数据2 ,数据3，数据4  };
+	int arr3[2][3] = { 1,2,3,4,5,6 }; 
+
+	//方式4 
+	//数据类型 数组名[][列数] = { 数据1，数据2 ,数据3，数据4  };
+	int arr4[][3] = { 1,2,3,4,5,6 };
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><blockquote><p>总结：在定义二维数组时，如果初始化了数据，可以省略行数</p></blockquote> <h4 id="_5-3-2-二维数组数组名"><a href="#_5-3-2-二维数组数组名" class="header-anchor">#</a> 5.3.2 二维数组数组名</h4> <ul><li>查看二维数组所占内存空间</li> <li>获取二维数组首地址</li></ul> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	//二维数组数组名
+	int arr[2][3] =
+	{
+		{1,2,3},
+		{4,5,6}
+	};
+
+	cout &lt;&lt; &quot;二维数组大小： &quot; &lt;&lt; sizeof(arr) &lt;&lt; endl;
+	cout &lt;&lt; &quot;二维数组一行大小： &quot; &lt;&lt; sizeof(arr[0]) &lt;&lt; endl;
+	cout &lt;&lt; &quot;二维数组元素大小： &quot; &lt;&lt; sizeof(arr[0][0]) &lt;&lt; endl;
+
+	cout &lt;&lt; &quot;二维数组行数： &quot; &lt;&lt; sizeof(arr) / sizeof(arr[0]) &lt;&lt; endl;
+	cout &lt;&lt; &quot;二维数组列数： &quot; &lt;&lt; sizeof(arr[0]) / sizeof(arr[0][0]) &lt;&lt; endl;
+
+	//地址
+	cout &lt;&lt; &quot;二维数组首地址：&quot; &lt;&lt; arr &lt;&lt; endl;
+	cout &lt;&lt; &quot;二维数组第一行地址：&quot; &lt;&lt; arr[0] &lt;&lt; endl;
+	cout &lt;&lt; &quot;二维数组第二行地址：&quot; &lt;&lt; arr[1] &lt;&lt; endl;
+
+	cout &lt;&lt; &quot;二维数组第一个元素地址：&quot; &lt;&lt; &amp;arr[0][0] &lt;&lt; endl;
+	cout &lt;&lt; &quot;二维数组第二个元素地址：&quot; &lt;&lt; &amp;arr[0][1] &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><blockquote><p>总结1：二维数组名就是这个数组的首地址</p></blockquote> <blockquote><p>总结2：对二维数组名进行sizeof时，可以获取整个二维数组占用的内存空间大小</p></blockquote> <h4 id="_5-3-3-二维数组应用案例"><a href="#_5-3-3-二维数组应用案例" class="header-anchor">#</a> <strong>5.3.3 二维数组应用案例</strong></h4> <p><strong>考试成绩统计：</strong></p> <p>案例描述：有三名同学（张三，李四，王五），在一次考试中的成绩分别如下表，<strong>请分别输出三名同学的总成绩</strong></p> <table><thead><tr><th></th> <th>语文</th> <th>数学</th> <th>英语</th></tr></thead> <tbody><tr><td>张三</td> <td>100</td> <td>100</td> <td>100</td></tr> <tr><td>李四</td> <td>90</td> <td>50</td> <td>100</td></tr> <tr><td>王五</td> <td>60</td> <td>70</td> <td>80</td></tr></tbody></table> <p><strong>参考答案：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	int scores[3][3] =
+	{
+		{100,100,100},
+		{90,50,100},
+		{60,70,80},
+	};
+
+	string names[3] = { &quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot; };
+
+	for (int i = 0; i &lt; 3; i++)
+	{
+		int sum = 0;
+		for (int j = 0; j &lt; 3; j++)
+		{
+			sum += scores[i][j];
+		}
+		cout &lt;&lt; names[i] &lt;&lt; &quot;同学总成绩为： &quot; &lt;&lt; sum &lt;&lt; endl;
+	}
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h2 id="_6-函数"><a href="#_6-函数" class="header-anchor">#</a> 6 函数</h2> <h3 id="_6-1-概述"><a href="#_6-1-概述" class="header-anchor">#</a> 6.1 概述</h3> <p>**作用：**将一段经常使用的代码封装起来，减少重复代码</p> <p>一个较大的程序，一般分为若干个程序块，每个模块实现特定的功能。</p> <h3 id="_6-2-函数的定义"><a href="#_6-2-函数的定义" class="header-anchor">#</a> 6.2 函数的定义</h3> <p>函数的定义一般主要有5个步骤：</p> <p>1、返回值类型</p> <p>2、函数名</p> <p>3、参数表列</p> <p>4、函数体语句</p> <p>5、return 表达式</p> <p><strong>语法：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>返回值类型 函数名 （参数列表）
+{
+
+       函数体语句
+
+       return表达式
+
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li>返回值类型 ：一个函数可以返回一个值。在函数定义中</li> <li>函数名：给函数起个名称</li> <li>参数列表：使用该函数时，传入的数据</li> <li>函数体语句：花括号内的代码，函数内需要执行的语句</li> <li>return表达式： 和返回值类型挂钩，函数执行完后，返回相应的数据</li></ul> <p>**示例：**定义一个加法函数，实现两个数相加</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//函数定义
+int add(int num1, int num2)
+{
+	int sum = num1 + num2;
+	return sum;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="_6-3-函数的调用"><a href="#_6-3-函数的调用" class="header-anchor">#</a> 6.3 函数的调用</h3> <p>**功能：**使用定义好的函数</p> <p><strong>语法：</strong><code>函数名（参数）</code></p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//函数定义
+int add(int num1, int num2) //定义中的num1,num2称为形式参数，简称形参
+{
+	int sum = num1 + num2;
+	return sum;
+}
+
+int main() {
+
+	int a = 10;
+	int b = 10;
+	//调用add函数
+	int sum = add(a, b);//调用时的a，b称为实际参数，简称实参
+	cout &lt;&lt; &quot;sum = &quot; &lt;&lt; sum &lt;&lt; endl;
+
+	a = 100;
+	b = 100;
+
+	sum = add(a, b);
+	cout &lt;&lt; &quot;sum = &quot; &lt;&lt; sum &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><blockquote><p>总结：函数定义里小括号内称为形参，函数调用时传入的参数称为实参</p></blockquote> <h3 id="_6-4-值传递"><a href="#_6-4-值传递" class="header-anchor">#</a> 6.4 值传递</h3> <ul><li>所谓值传递，就是函数调用时实参将数值传入给形参</li> <li>值传递时，<mark>如果形参发生，并不会影响实参</mark></li></ul> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>void swap(int num1, int num2)
+{
+	cout &lt;&lt; &quot;交换前：&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;num1 = &quot; &lt;&lt; num1 &lt;&lt; endl;
+	cout &lt;&lt; &quot;num2 = &quot; &lt;&lt; num2 &lt;&lt; endl;
+
+	int temp = num1;
+	num1 = num2;
+	num2 = temp;
+
+	cout &lt;&lt; &quot;交换后：&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;num1 = &quot; &lt;&lt; num1 &lt;&lt; endl;
+	cout &lt;&lt; &quot;num2 = &quot; &lt;&lt; num2 &lt;&lt; endl;
+
+	//return ; 当函数声明时候，不需要返回值，可以不写return
+}
+
+int main() {
+
+	int a = 10;
+	int b = 20;
+
+	swap(a, b);
+
+	cout &lt;&lt; &quot;mian中的 a = &quot; &lt;&lt; a &lt;&lt; endl;
+	cout &lt;&lt; &quot;mian中的 b = &quot; &lt;&lt; b &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><blockquote><p>总结： 值传递时，形参是修饰不了实参的</p></blockquote> <h3 id="_6-5-函数的常见样式"><a href="#_6-5-函数的常见样式" class="header-anchor">#</a> <strong>6.5 函数的常见样式</strong></h3> <p>常见的函数样式有4种</p> <ol><li>无参无返</li> <li>有参无返</li> <li>无参有返</li> <li>有参有返</li></ol> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//函数常见样式
+//1、 无参无返
+void test01()
+{
+	//void a = 10; //无类型不可以创建变量,原因无法分配内存
+	cout &lt;&lt; &quot;this is test01&quot; &lt;&lt; endl;
+	//test01(); 函数调用
+}
+
+//2、 有参无返
+void test02(int a)
+{
+	cout &lt;&lt; &quot;this is test02&quot; &lt;&lt; endl;
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+}
+
+//3、无参有返
+int test03()
+{
+	cout &lt;&lt; &quot;this is test03 &quot; &lt;&lt; endl;
+	return 10;
+}
+
+//4、有参有返
+int test04(int a, int b)
+{
+	cout &lt;&lt; &quot;this is test04 &quot; &lt;&lt; endl;
+	int sum = a + b;
+	return sum;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h3 id="_6-6-函数的声明"><a href="#_6-6-函数的声明" class="header-anchor">#</a> 6.6 函数的声明</h3> <p><strong>作用：</strong> 告诉编译器函数名称及如何调用函数。函数的实际主体可以单独定义。</p> <ul><li>函数的<strong>声明可以多次</strong>，但是函数的<strong>定义只能有一次</strong></li></ul> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//声明可以多次，定义只能一次
+//声明
+int max(int a, int b);
+int max(int a, int b);
+//定义
+int max(int a, int b)
+{
+	return a &gt; b ? a : b;
+}
+
+int main() {
+
+	int a = 100;
+	int b = 200;
+
+	cout &lt;&lt; max(a, b) &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h3 id="_6-7-函数的分文件编写"><a href="#_6-7-函数的分文件编写" class="header-anchor">#</a> 6.7 函数的分文件编写</h3> <p>**作用：**让代码结构更加清晰</p> <p>函数分文件编写一般有4个步骤</p> <ol><li>创建后缀名为.h的头文件</li> <li>创建后缀名为.cpp的源文件</li> <li>在头文件中写函数的声明</li> <li>在源文件中写函数的定义</li></ol> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//swap.h文件
+#include&lt;iostream&gt;
+using namespace std;
+
+//实现两个数字交换的函数声明
+void swap(int a, int b);
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//swap.cpp文件
+#include &quot;swap.h&quot;
+
+void swap(int a, int b)
+{
+	int temp = a;
+	a = b;
+	b = temp;
+
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+	cout &lt;&lt; &quot;b = &quot; &lt;&lt; b &lt;&lt; endl;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//main函数文件
+#include &quot;swap.h&quot;
+int main() {
+
+	int a = 100;
+	int b = 200;
+	swap(a, b);
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="_7-指针"><a href="#_7-指针" class="header-anchor">#</a> 7 指针</h2> <h3 id="_7-1-指针的基本概念"><a href="#_7-1-指针的基本概念" class="header-anchor">#</a> 7.1 指针的基本概念</h3> <p><strong>指针的作用：</strong> 可以通过指针间接访问内存</p> <ul><li>内存编号是从0开始记录的，一般用十六进制数字表示</li> <li>可以利用指针变量保存地址</li></ul> <h3 id="_7-2-指针变量的定义和使用"><a href="#_7-2-指针变量的定义和使用" class="header-anchor">#</a> 7.2 指针变量的定义和使用</h3> <p>指针变量定义语法： <code>数据类型 * 变量名；</code></p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	//1、指针的定义
+	int a = 10; //定义整型变量a
+	
+	//指针定义语法： 数据类型 * 变量名 ;
+	int * p;
+
+	//指针变量赋值
+	p = &amp;a; //指针指向变量a的地址
+	cout &lt;&lt; &amp;a &lt;&lt; endl; //打印数据a的地址
+	cout &lt;&lt; p &lt;&lt; endl;  //打印指针变量p
+
+	//2、指针的使用
+	//通过*操作指针变量指向的内存
+	cout &lt;&lt; &quot;*p = &quot; &lt;&lt; *p &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>指针变量和普通变量的区别</p> <ul><li>普通变量存放的是数据,指针变量存放的是地址</li> <li>指针变量可以通过&quot; * &quot;操作符，操作指针变量指向的内存空间，这个过程称为解引用</li></ul> <blockquote><p>总结1： 我们可以通过 &amp; 符号 获取变量的地址</p></blockquote> <blockquote><p>总结2：利用指针可以记录地址</p></blockquote> <blockquote><p>总结3：对指针变量解引用，可以操作指针指向的内存</p></blockquote> <h3 id="_7-3-指针所占内存空间"><a href="#_7-3-指针所占内存空间" class="header-anchor">#</a> 7.3 指针所占内存空间</h3> <p>提问：指针也是种数据类型，那么这种数据类型占用多少内存空间？</p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	int a = 10;
+
+	int * p;
+	p = &amp;a; //指针指向数据a的地址
+
+	cout &lt;&lt; *p &lt;&lt; endl; //* 解引用
+	cout &lt;&lt; sizeof(p) &lt;&lt; endl;
+	cout &lt;&lt; sizeof(char *) &lt;&lt; endl;
+	cout &lt;&lt; sizeof(float *) &lt;&lt; endl;
+	cout &lt;&lt; sizeof(double *) &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><blockquote><p>总结：所有指针类型在32位操作系统下是4个字节</p></blockquote> <h3 id="_7-4-空指针和野指针"><a href="#_7-4-空指针和野指针" class="header-anchor">#</a> 7.4 空指针和野指针</h3> <p><strong>空指针</strong>：指针变量指向内存中编号为0的空间</p> <p>**用途：**初始化指针变量</p> <p>**注意：**空指针指向的内存是不可以访问的</p> <p><strong>示例1：空指针</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	//指针变量p指向内存地址编号为0的空间
+	int * p = NULL;
+
+	//访问空指针报错 
+	//内存编号0 ~255为系统占用内存，不允许用户访问
+	cout &lt;&lt; *p &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><strong>野指针</strong>：指针变量指向非法的内存空间</p> <p><strong>示例2：野指针</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	//指针变量p指向内存地址编号为0x1100的空间
+	int * p = (int *)0x1100;
+
+	//访问野指针报错 
+	cout &lt;&lt; *p &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><blockquote><p>总结：空指针和野指针都不是我们申请的空间，因此不要访问。</p></blockquote> <h3 id="_7-5-const修饰指针"><a href="#_7-5-const修饰指针" class="header-anchor">#</a> 7.5 const修饰指针</h3> <p>const修饰指针有三种情况</p> <ol><li>const修饰指针   --- 常量指针</li> <li>const修饰常量   --- 指针常量</li> <li>const即修饰指针，又修饰常量</li></ol> <p><strong>示例：</strong></p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	int a = 10;
+	int b = 10;
+
+	//const修饰的是指针，指针指向可以改，指针指向的值不可以更改
+	const int * p1 = &amp;a; 
+	p1 = &amp;b; //正确
+	//*p1 = 100;  报错
+	
+
+	//const修饰的是常量，指针指向不可以改，指针指向的值可以更改
+	int * const p2 = &amp;a;
+	//p2 = &amp;b; //错误
+	*p2 = 100; //正确
+
+    //const既修饰指针又修饰常量
+	const int * const p3 = &amp;a;
+	//p3 = &amp;b; //错误
+	//*p3 = 100; //错误
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><blockquote><p>技巧：看const右侧紧跟着的是指针还是常量, 是指针就是常量指针，是常量就是指针常量</p></blockquote> <h3 id="_7-6-指针和数组"><a href="#_7-6-指针和数组" class="header-anchor">#</a> 7.6 指针和数组</h3> <p>**作用：**利用指针访问数组中元素</p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>int main() {
+
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+
+	int * p = arr;  //指向数组的指针
+
+	cout &lt;&lt; &quot;第一个元素： &quot; &lt;&lt; arr[0] &lt;&lt; endl;
+	cout &lt;&lt; &quot;指针访问第一个元素： &quot; &lt;&lt; *p &lt;&lt; endl;
+
+	for (int i = 0; i &lt; 10; i++)
+	{
+		//利用指针遍历数组
+		cout &lt;&lt; *p &lt;&lt; endl;
+		p++;
+	}
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h3 id="_7-7-指针和函数"><a href="#_7-7-指针和函数" class="header-anchor">#</a> 7.7 指针和函数</h3> <p>**作用：**利用指针作函数参数，可以修改实参的值</p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//值传递
+void swap1(int a ,int b)
+{
+	int temp = a;
+	a = b; 
+	b = temp;
+}
+//地址传递
+void swap2(int * p1, int *p2)
+{
+	int temp = *p1;
+	*p1 = *p2;
+	*p2 = temp;
+}
+
+int main() {
+
+	int a = 10;
+	int b = 20;
+	swap1(a, b); // 值传递不会改变实参
+
+	swap2(&amp;a, &amp;b); //地址传递会改变实参
+
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+
+	cout &lt;&lt; &quot;b = &quot; &lt;&lt; b &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><blockquote><p>总结：如果不想修改实参，就用值传递，如果想修改实参，就用地址传递</p></blockquote> <h3 id="_7-8-指针、数组、函数"><a href="#_7-8-指针、数组、函数" class="header-anchor">#</a> 7.8 指针、数组、函数</h3> <p>**案例描述：**封装一个函数，利用冒泡排序，实现对整型数组的升序排序</p> <p>例如数组：int arr[10] = { 4,3,6,9,1,2,10,8,7,5 };</p> <p><strong>示例：</strong></p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>//冒泡排序函数
+void bubbleSort(int * arr, int len)  //int * arr 也可以写为int arr[]
+{
+	for (int i = 0; i &lt; len - 1; i++)
+	{
+		for (int j = 0; j &lt; len - 1 - i; j++)
+		{
+			if (arr[j] &gt; arr[j + 1])
+			{
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
+
+//打印数组函数
+void printArray(int arr[], int len)
+{
+	for (int i = 0; i &lt; len; i++)
+	{
+		cout &lt;&lt; arr[i] &lt;&lt; endl;
+	}
+}
+
+int main() {
+
+	int arr[10] = { 4,3,6,9,1,2,10,8,7,5 };
+	int len = sizeof(arr) / sizeof(int);
+
+	bubbleSort(arr, len);
+
+	printArray(arr, len);
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><blockquote><p>总结：当数组名传入到函数作为参数时，被退化为指向首元素的指针</p></blockquote> <h2 id="_8-结构体"><a href="#_8-结构体" class="header-anchor">#</a> 8 结构体</h2> <h3 id="_8-1-结构体基本概念"><a href="#_8-1-结构体基本概念" class="header-anchor">#</a> 8.1 结构体基本概念</h3> <p>结构体属于用户==自定义的数据类型==，允许用户存储不同的数据类型</p> <h3 id="_8-2-结构体定义和使用"><a href="#_8-2-结构体定义和使用" class="header-anchor">#</a> 8.2 结构体定义和使用</h3> <p><strong>语法：</strong><code>struct 结构体名 { 结构体成员列表 }；</code></p> <p>通过结构体创建变量的方式有三种：</p> <ul><li>struct 结构体名 变量名</li> <li>struct 结构体名 变量名 = { 成员1值 ， 成员2值...}</li> <li>定义结构体时顺便创建变量</li></ul> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//结构体定义
+struct student
+{
+	//成员列表
+	string name;  //姓名
+	int age;      //年龄
+	int score;    //分数
+}stu3; //结构体变量创建方式3 
+
+
+int main() {
+
+	//结构体变量创建方式1
+	struct student stu1; //struct 关键字可以省略
+
+	stu1.name = &quot;张三&quot;;
+	stu1.age = 18;
+	stu1.score = 100;
+	
+	cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; stu1.name &lt;&lt; &quot; 年龄：&quot; &lt;&lt; stu1.age  &lt;&lt; &quot; 分数：&quot; &lt;&lt; stu1.score &lt;&lt; endl;
+
+	//结构体变量创建方式2
+	struct student stu2 = { &quot;李四&quot;,19,60 };
+
+	cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; stu2.name &lt;&lt; &quot; 年龄：&quot; &lt;&lt; stu2.age  &lt;&lt; &quot; 分数：&quot; &lt;&lt; stu2.score &lt;&lt; endl;
+
+
+	stu3.name = &quot;王五&quot;;
+	stu3.age = 18;
+	stu3.score = 80;
+	
+
+	cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; stu3.name &lt;&lt; &quot; 年龄：&quot; &lt;&lt; stu3.age  &lt;&lt; &quot; 分数：&quot; &lt;&lt; stu3.score &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><blockquote><p>总结1：定义结构体时的关键字是struct，不可省略</p></blockquote> <blockquote><p>总结2：创建结构体变量时，关键字struct可以省略</p></blockquote> <blockquote><p>总结3：结构体变量利用操作符 ''.''  访问成员</p></blockquote> <h3 id="_8-3-结构体数组"><a href="#_8-3-结构体数组" class="header-anchor">#</a> 8.3 结构体数组</h3> <p>**作用：**将自定义的结构体放入到数组中方便维护</p> <p><strong>语法：</strong><code>struct 结构体名 数组名[元素个数] = { {} , {} , ... {} }</code></p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//结构体定义
+struct student
+{
+	//成员列表
+	string name;  //姓名
+	int age;      //年龄
+	int score;    //分数
+}
+
+int main() {
+	
+	//结构体数组
+	struct student arr[3]=
+	{
+		{&quot;张三&quot;,18,80 },
+		{&quot;李四&quot;,19,60 },
+		{&quot;王五&quot;,20,70 }
+	};
+
+	for (int i = 0; i &lt; 3; i++)
+	{
+		cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; arr[i].name &lt;&lt; &quot; 年龄：&quot; &lt;&lt; arr[i].age &lt;&lt; &quot; 分数：&quot; &lt;&lt; arr[i].score &lt;&lt; endl;
+	}
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h3 id="_8-4-结构体指针"><a href="#_8-4-结构体指针" class="header-anchor">#</a> 8.4 结构体指针</h3> <p>**作用：**通过指针访问结构体中的成员</p> <ul><li>利用操作符 <code>-&gt;</code>可以通过结构体指针访问结构体属性</li></ul> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//结构体定义
+struct student
+{
+	//成员列表
+	string name;  //姓名
+	int age;      //年龄
+	int score;    //分数
+};
+
+
+int main() {
+	
+	struct student stu = { &quot;张三&quot;,18,100, };
+	
+	struct student * p = &amp;stu;
+	
+	p-&gt;score = 80; //指针通过 -&gt; 操作符可以访问成员
+
+	cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; p-&gt;name &lt;&lt; &quot; 年龄：&quot; &lt;&lt; p-&gt;age &lt;&lt; &quot; 分数：&quot; &lt;&lt; p-&gt;score &lt;&lt; endl;
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><blockquote><p>总结：结构体指针可以通过 -&gt; 操作符 来访问结构体中的成员</p></blockquote> <h3 id="_8-5-结构体嵌套结构体"><a href="#_8-5-结构体嵌套结构体" class="header-anchor">#</a> 8.5 结构体嵌套结构体</h3> <p><strong>作用：</strong> 结构体中的成员可以是另一个结构体</p> <p>**例如：**每个老师辅导一个学员，一个老师的结构体中，记录一个学生的结构体</p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//学生结构体定义
+struct student
+{
+	//成员列表
+	string name;  //姓名
+	int age;      //年龄
+	int score;    //分数
+};
+
+//教师结构体定义
+struct teacher
+{
+    //成员列表
+	int id; //职工编号
+	string name;  //教师姓名
+	int age;   //教师年龄
+	struct student stu; //子结构体 学生
+};
+
+
+int main() {
+
+	struct teacher t1;
+	t1.id = 10000;
+	t1.name = &quot;老王&quot;;
+	t1.age = 40;
+
+	t1.stu.name = &quot;张三&quot;;
+	t1.stu.age = 18;
+	t1.stu.score = 100;
+
+	cout &lt;&lt; &quot;教师 职工编号： &quot; &lt;&lt; t1.id &lt;&lt; &quot; 姓名： &quot; &lt;&lt; t1.name &lt;&lt; &quot; 年龄： &quot; &lt;&lt; t1.age &lt;&lt; endl;
+	
+	cout &lt;&lt; &quot;辅导学员 姓名： &quot; &lt;&lt; t1.stu.name &lt;&lt; &quot; 年龄：&quot; &lt;&lt; t1.stu.age &lt;&lt; &quot; 考试分数： &quot; &lt;&lt; t1.stu.score &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><p>**总结：**在结构体中可以定义另一个结构体作为成员，用来解决实际问题</p> <h3 id="_8-6-结构体做函数参数"><a href="#_8-6-结构体做函数参数" class="header-anchor">#</a> 8.6 结构体做函数参数</h3> <p>**作用：**将结构体作为参数向函数中传递</p> <p>传递方式有两种：</p> <ul><li>值传递</li> <li>地址传递</li></ul> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//学生结构体定义
+struct student
+{
+	//成员列表
+	string name;  //姓名
+	int age;      //年龄
+	int score;    //分数
+};
+
+//值传递
+void printStudent(student stu )
+{
+	stu.age = 28;
+	cout &lt;&lt; &quot;子函数中 姓名：&quot; &lt;&lt; stu.name &lt;&lt; &quot; 年龄： &quot; &lt;&lt; stu.age  &lt;&lt; &quot; 分数：&quot; &lt;&lt; stu.score &lt;&lt; endl;
+}
+
+//地址传递
+void printStudent2(student *stu)
+{
+	stu-&gt;age = 28;
+	cout &lt;&lt; &quot;子函数中 姓名：&quot; &lt;&lt; stu-&gt;name &lt;&lt; &quot; 年龄： &quot; &lt;&lt; stu-&gt;age  &lt;&lt; &quot; 分数：&quot; &lt;&lt; stu-&gt;score &lt;&lt; endl;
+}
+
+int main() {
+
+	student stu = { &quot;张三&quot;,18,100};
+	//值传递
+	printStudent(stu);
+	cout &lt;&lt; &quot;主函数中 姓名：&quot; &lt;&lt; stu.name &lt;&lt; &quot; 年龄： &quot; &lt;&lt; stu.age &lt;&lt; &quot; 分数：&quot; &lt;&lt; stu.score &lt;&lt; endl;
+
+	cout &lt;&lt; endl;
+
+	//地址传递
+	printStudent2(&amp;stu);
+	cout &lt;&lt; &quot;主函数中 姓名：&quot; &lt;&lt; stu.name &lt;&lt; &quot; 年龄： &quot; &lt;&lt; stu.age  &lt;&lt; &quot; 分数：&quot; &lt;&lt; stu.score &lt;&lt; endl;
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><blockquote><p>总结：如果不想修改主函数中的数据，用值传递，反之用地址传递</p></blockquote> <h3 id="_8-7-结构体中-const使用场景"><a href="#_8-7-结构体中-const使用场景" class="header-anchor">#</a> 8.7 结构体中 const使用场景</h3> <p>**作用：**用const来防止误操作</p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//学生结构体定义
+struct student
+{
+	//成员列表
+	string name;  //姓名
+	int age;      //年龄
+	int score;    //分数
+};
+
+//const使用场景
+void printStudent(const student *stu) //加const防止函数体中的误操作
+{
+	//stu-&gt;age = 100; //操作失败，因为加了const修饰
+	cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; stu-&gt;name &lt;&lt; &quot; 年龄：&quot; &lt;&lt; stu-&gt;age &lt;&lt; &quot; 分数：&quot; &lt;&lt; stu-&gt;score &lt;&lt; endl;
+
+}
+
+int main() {
+
+	student stu = { &quot;张三&quot;,18,100 };
+
+	printStudent(&amp;stu);
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h3 id="_8-8-结构体案例"><a href="#_8-8-结构体案例" class="header-anchor">#</a> 8.8 结构体案例</h3> <h4 id="_8-8-1-案例1"><a href="#_8-8-1-案例1" class="header-anchor">#</a> 8.8.1 案例1</h4> <p><strong>案例描述：</strong></p> <p>学校正在做毕设项目，每名老师带领5个学生，总共有3名老师，需求如下</p> <p>设计学生和老师的结构体，其中在老师的结构体中，有老师姓名和一个存放5名学生的数组作为成员</p> <p>学生的成员有姓名、考试分数，创建数组存放3名老师，通过函数给每个老师及所带的学生赋值</p> <p>最终打印出老师数据以及老师所带的学生数据。</p> <p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>struct Student
+{
+	string name;
+	int score;
+};
+struct Teacher
+{
+	string name;
+	Student sArray[5];
+};
+
+void allocateSpace(Teacher tArray[] , int len)
+{
+	string tName = &quot;教师&quot;;
+	string sName = &quot;学生&quot;;
+	string nameSeed = &quot;ABCDE&quot;;
+	for (int i = 0; i &lt; len; i++)
+	{
+		tArray[i].name = tName + nameSeed[i];
+		
+		for (int j = 0; j &lt; 5; j++)
+		{
+			tArray[i].sArray[j].name = sName + nameSeed[j];
+			tArray[i].sArray[j].score = rand() % 61 + 40;
+		}
+	}
+}
+
+void printTeachers(Teacher tArray[], int len)
+{
+	for (int i = 0; i &lt; len; i++)
+	{
+		cout &lt;&lt; tArray[i].name &lt;&lt; endl;
+		for (int j = 0; j &lt; 5; j++)
+		{
+			cout &lt;&lt; &quot;\t姓名：&quot; &lt;&lt; tArray[i].sArray[j].name &lt;&lt; &quot; 分数：&quot; &lt;&lt; tArray[i].sArray[j].score &lt;&lt; endl;
+		}
+	}
+}
+
+int main() {
+
+	srand((unsigned int)time(NULL)); //随机数种子 头文件 #include &lt;ctime&gt;
+
+	Teacher tArray[3]; //老师数组
+
+	int len = sizeof(tArray) / sizeof(Teacher);
+
+	allocateSpace(tArray, len); //创建数据
+
+	printTeachers(tArray, len); //打印数据
+	
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><h4 id="_8-8-2-案例2"><a href="#_8-8-2-案例2" class="header-anchor">#</a> 8.8.2 案例2</h4> <p><strong>案例描述：</strong></p> <p>设计一个英雄的结构体，包括成员姓名，年龄，性别;创建结构体数组，数组中存放5名英雄。</p> <p>通过冒泡排序的算法，将数组中的英雄按照年龄进行升序排序，最终打印排序后的结果。</p> <p>五名英雄信息如下：</p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>		{&quot;刘备&quot;,23,&quot;男&quot;},
+		{&quot;关羽&quot;,22,&quot;男&quot;},
+		{&quot;张飞&quot;,20,&quot;男&quot;},
+		{&quot;赵云&quot;,21,&quot;男&quot;},
+		{&quot;貂蝉&quot;,19,&quot;女&quot;},
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><strong>示例：</strong></p> <div class="language-C++ line-numbers-mode"><pre class="language-text"><code>//英雄结构体
+struct hero
+{
+	string name;
+	int age;
+	string sex;
+};
+//冒泡排序
+void bubbleSort(hero arr[] , int len)
+{
+	for (int i = 0; i &lt; len - 1; i++)
+	{
+		for (int j = 0; j &lt; len - 1 - i; j++)
+		{
+			if (arr[j].age &gt; arr[j + 1].age)
+			{
+				hero temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
+//打印数组
+void printHeros(hero arr[], int len)
+{
+	for (int i = 0; i &lt; len; i++)
+	{
+		cout &lt;&lt; &quot;姓名： &quot; &lt;&lt; arr[i].name &lt;&lt; &quot; 性别： &quot; &lt;&lt; arr[i].sex &lt;&lt; &quot; 年龄： &quot; &lt;&lt; arr[i].age &lt;&lt; endl;
+	}
+}
+
+int main() {
+
+	struct hero arr[5] =
+	{
+		{&quot;刘备&quot;,23,&quot;男&quot;},
+		{&quot;关羽&quot;,22,&quot;男&quot;},
+		{&quot;张飞&quot;,20,&quot;男&quot;},
+		{&quot;赵云&quot;,21,&quot;男&quot;},
+		{&quot;貂蝉&quot;,19,&quot;女&quot;},
+	};
+
+	int len = sizeof(arr) / sizeof(hero); //获取数组元素个数
+
+	bubbleSort(arr, len); //排序
+
+	printHeros(arr, len); //打印
+
+	system(&quot;pause&quot;);
+
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br></div></div><h1 id=""><a href="#" class="header-anchor">#</a></h1></div> <div class="theme-reward"><p class="theme-reward__text">Buy me a cup of coffee ☕.</p> <div class="theme-reward__con"><div class="theme-reward__list"><span class="item"><i class="icon-wechat"></i></span><span class="item"><svg class="theme-icon theme-icon-alipay"><use xlink:href="#theme-icon-alipay"></use></svg></span></div> <!----></div></div></div> <div class="article-footer"><!----> <div class="post-operate"><a href="/post/2023/03/16/markdown-%E5%9B%BE%E8%A1%A8%E8%AF%AD%E6%B3%95.html" class="post-operate__prev">markdown 图表语法</a> <a href="/post/2023/04/22/makefile%E7%AE%80%E4%BB%8B.html" class="post-operate__next">Makefile简介</a></div> <!----></div></article></div></div> <svg style="display:none;"><symbol id="theme-icon-auto" viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM4 16c0-6.627 5.373-12 12-12v24c-6.627 0-12-5.373-12-12z"></path></symbol> <symbol id="theme-icon-sun" viewBox="0 0 32 32"><path d="M16 26c1.105 0 2 0.895 2 2v2c0 1.105-0.895 2-2 2s-2-0.895-2-2v-2c0-1.105 0.895-2 2-2zM16 6c-1.105 0-2-0.895-2-2v-2c0-1.105 0.895-2 2-2s2 0.895 2 2v2c0 1.105-0.895 2-2 2zM30 14c1.105 0 2 0.895 2 2s-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2zM6 16c0 1.105-0.895 2-2 2h-2c-1.105 0-2-0.895-2-2s0.895-2 2-2h2c1.105 0 2 0.895 2 2zM25.899 23.071l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0zM6.101 8.929l-1.414-1.414c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0l1.414 1.414c0.781 0.781 0.781 2.047 0 2.828s-2.047 0.781-2.828 0zM25.899 8.929c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414zM6.101 23.071c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-1.414 1.414c-0.781 0.781-2.047 0.781-2.828 0s-0.781-2.047 0-2.828l1.414-1.414z"></path> <path d="M16 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 8-3.582 8-8s-3.582-8-8-8zM16 21c-2.761 0-5-2.239-5-5s2.239-5 5-5 5 2.239 5 5-2.239 5-5 5z"></path></symbol> <symbol id="theme-icon-moon" viewBox="0 0 18 18"><path d="M7.246 3.255c-0.251 0.828-0.322 1.71-0.198 2.597 0.366 2.63 2.455 4.723 5.080 5.089 0.282 0.040 0.568 0.060 0.85 0.060 0.599 0 1.184-0.087 1.742-0.257-0.674 2.215-2.642 3.926-4.973 4.21-0.254 0.031-0.51 0.047-0.762 0.047-1.713 0-3.349-0.738-4.486-2.024-1.152-1.304-1.669-2.987-1.457-4.739 0.284-2.335 1.992-4.307 4.204-4.982zM8.985 1c-0.362 0-0.731 0.024-1.104 0.075-3.543 0.48-6.388 3.364-6.82 6.92-0.592 4.867 3.184 9.005 7.924 9.005 0.33 0 0.665-0.020 1.003-0.062 3.549-0.433 6.428-3.283 6.907-6.833 0.052-0.383 0.076-0.761 0.075-1.134-0.002-0.583-0.482-0.972-0.996-0.972-0.209 0-0.424 0.065-0.614 0.207-0.665 0.498-1.489 0.793-2.383 0.793-0.188 0-0.38-0.013-0.574-0.040-1.732-0.242-3.137-1.649-3.378-3.385-0.155-1.115 0.149-2.156 0.751-2.963 0.415-0.657 0.025-1.609-0.764-1.612-0.009 0-0.018 0-0.028 0v0z"></path></symbol> <symbol id="theme-icon-palette" viewBox="0 0 1024 1024"><path d="M745.984 512q25.984 0 45.013333-18.005333t18.986667-45.994667-18.986667-45.994667-45.013333-18.005333-45.013333 18.005333-18.986667 45.994667 18.986667 45.994667 45.013333 18.005333zM617.984 342.016q25.984 0 45.013333-18.986667t18.986667-45.013333-18.986667-45.013333-45.013333-18.986667-45.013333 18.986667-18.986667 45.013333 18.986667 45.013333 45.013333 18.986667zM406.016 342.016q25.984 0 45.013333-18.986667t18.986667-45.013333-18.986667-45.013333-45.013333-18.986667-45.013333 18.986667-18.986667 45.013333 18.986667 45.013333 45.013333 18.986667zM278.016 512q25.984 0 45.013333-18.005333t18.986667-45.994667-18.986667-45.994667-45.013333-18.005333-45.013333 18.005333-18.986667 45.994667 18.986667 45.994667 45.013333 18.005333zM512 128q157.994667 0 271.018667 100.010667t112.981333 242.005333q0 88.021333-63.018667 150.016t-150.997333 61.994667l-73.984 0q-27.989333 0-45.994667 18.986667t-18.005333 45.013333q0 22.016 16 41.984t16 43.989333q0 27.989333-18.005333 45.994667t-45.994667 18.005333q-160 0-272-112t-112-272 112-272 272-112z" p-id="10529"></path></symbol> </svg></div><div class="global-ui"><!----><div class="float-menu-wrap"><!----> <div class="float-menu__list"><span class="icon-up"></span> <span title="auto" class="theme-mode-setting"><svg class="theme-icon theme-icon-auto"><use xlink:href="#theme-icon-auto"></use></svg></span> <!----> <span class="icon-toc"></span> <span class="icon-search"></span></div> <div class="float-menu"><svg width="100%" height="100%" class="float-menu__progress"><circle stroke-dasharray="0% 301.59289474462014%" stroke="currentcolor" stroke-width="2%" fill="none" r="48%" cx="50%" cy="50%"></circle></svg> <div class="float-menu__dot"></div></div></div><div class="theme-search" style="display:none;"><div class="theme-search__inner"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <a class="icon-exit"></a></div></div><svg style="display:none;"><symbol id="theme-icon-pacman" viewBox="0 0 32 32"><path d="M30.148 5.588c-2.934-3.42-7.288-5.588-12.148-5.588-8.837 0-16 7.163-16 16s7.163 16 16 16c4.86 0 9.213-2.167 12.148-5.588l-10.148-10.412 10.148-10.412zM22 3.769c1.232 0 2.231 0.999 2.231 2.231s-0.999 2.231-2.231 2.231-2.231-0.999-2.231-2.231c0-1.232 0.999-2.231 2.231-2.231z"></path></symbol> <symbol id="theme-icon-tux" viewBox="0 0 32 32"><path d="M17.739 23.029c-2.561 1.191-4.942 1.179-6.542 1.063-1.908-0.138-3.442-0.66-4.117-1.117-0.416-0.281-0.981-0.173-1.262 0.243s-0.173 0.981 0.243 1.262c1.084 0.734 3.002 1.28 5.005 1.424 0.34 0.024 0.712 0.040 1.114 0.040 1.743 0 3.957-0.166 6.326-1.268 0.455-0.212 0.652-0.752 0.441-1.207s-0.752-0.652-1.208-0.441zM27.842 21.682c0.087-7.896 0.899-22.819-14.218-21.613-14.925 1.201-10.968 16.968-11.19 22.248-0.197 2.793-1.124 6.208-2.434 9.683h4.034c0.415-1.473 0.72-2.929 0.851-4.317 0.243 0.17 0.503 0.334 0.781 0.491 0.452 0.266 0.84 0.62 1.251 0.995 0.961 0.876 2.050 1.868 4.179 1.992 0.143 0.008 0.287 0.012 0.427 0.012 2.153 0 3.625-0.942 4.809-1.699 0.567-0.363 1.057-0.676 1.518-0.827 1.31-0.41 2.454-1.072 3.309-1.914 0.134-0.131 0.258-0.267 0.374-0.405 0.476 1.746 1.129 3.711 1.853 5.672h8.614c-2.068-3.195-4.201-6.324-4.158-10.318zM3.878 17.386c0-0 0-0.001-0-0.001-0.148-2.577 1.085-4.745 2.754-4.842s3.142 1.913 3.291 4.49c0 0 0 0.001 0 0.001 0.008 0.139 0.011 0.276 0.012 0.413-0.529 0.133-1.006 0.326-1.434 0.551-0.002-0.019-0.003-0.038-0.005-0.057 0-0 0-0.001 0-0.001-0.143-1.463-0.924-2.567-1.745-2.467s-1.371 1.367-1.228 2.83c0 0 0 0.001 0 0.001 0.062 0.638 0.246 1.207 0.501 1.639-0.064 0.050-0.243 0.182-0.45 0.333-0.155 0.114-0.344 0.252-0.572 0.42-0.621-0.815-1.047-1.987-1.123-3.309zM20.789 23.756c-0.059 1.362-1.841 2.643-3.487 3.158l-0.009 0.003c-0.684 0.222-1.295 0.613-1.941 1.026-1.085 0.695-2.208 1.413-3.829 1.413-0.106 0-0.215-0.003-0.323-0.009-1.485-0.087-2.179-0.72-3.059-1.521-0.464-0.423-0.943-0.86-1.562-1.223l-0.013-0.008c-1.335-0.753-2.163-1.69-2.216-2.506-0.026-0.406 0.154-0.757 0.537-1.044 0.832-0.624 1.39-1.032 1.759-1.302 0.41-0.3 0.533-0.39 0.625-0.477 0.066-0.062 0.136-0.131 0.213-0.205 0.764-0.743 2.043-1.986 4.005-1.986 1.2 0 2.528 0.462 3.943 1.372 0.666 0.434 1.246 0.634 1.981 0.887 0.505 0.174 1.077 0.372 1.843 0.7l0.012 0.005c0.715 0.294 1.559 0.83 1.521 1.717zM20.395 20.556c-0.137-0.069-0.28-0.135-0.43-0.196-0.691-0.296-1.245-0.496-1.704-0.656 0.254-0.497 0.411-1.116 0.426-1.789 0-0 0-0.001 0-0.001 0.035-1.637-0.79-2.966-1.844-2.968s-1.936 1.322-1.971 2.959c0 0 0 0.001 0 0.001-0.001 0.054-0.001 0.107-0.001 0.16-0.649-0.299-1.287-0.515-1.911-0.649-0.003-0.061-0.006-0.123-0.008-0.185 0-0 0-0.001 0-0.002-0.061-2.982 1.769-5.45 4.086-5.513s4.245 2.303 4.305 5.285c0 0.001 0 0.001 0 0.002 0.027 1.348-0.333 2.59-0.949 3.552z"></path></symbol> <symbol id="theme-icon-finder" viewBox="0 0 32 32"><path d="M17.788 24.32c-0-0.001-0-0.003-0-0.004 0 0.001 0 0.003 0 0.004z"></path> <path d="M17.831 25.454c-0-0.007-0.001-0.015-0.001-0.022 0 0.007 0.001 0.015 0.001 0.022z"></path> <path d="M17.807 24.885c-0-0.006-0-0.011-0.001-0.017 0 0.006 0 0.011 0.001 0.017z"></path> <path d="M30 0h-28c-1.1 0-2 0.9-2 2v28c0 1.1 0.9 2 2 2h15.432c0.001 0 0.003 0 0.004 0s0.003-0 0.004-0h12.56c1.1 0 2-0.9 2-2v-28c0-1.1-0.9-2-2-2zM6 7c0-0.552 0.448-1 1-1s1 0.448 1 1v2c0 0.552-0.448 1-1 1s-1-0.448-1-1v-2zM30 30h-11.721c-0.209-1.315-0.341-2.671-0.418-3.988 0 0.004 0 0.007 0.001 0.011-0.616 0.067-1.237 0.102-1.862 0.102-4.177 0-8.199-1.52-11.328-4.281-0.466-0.411-0.51-1.122-0.099-1.588s1.122-0.51 1.588-0.099c2.717 2.398 6.211 3.718 9.839 3.718 0.596 0 1.189-0.036 1.776-0.107-0.069-3.694 0.215-6.622 0.22-6.669 0.028-0.281-0.064-0.561-0.254-0.77s-0.459-0.329-0.741-0.329h-2.974c0.043-1.082 0.159-2.932 0.467-5.006 0.589-3.961 1.625-7.055 3.005-8.994h12.502v28z"></path> <path d="M25 10c-0.552 0-1-0.448-1-1v-2c0-0.552 0.448-1 1-1s1 0.448 1 1v2c0 0.552-0.448 1-1 1z"></path> <path d="M16.89 26.101c-0.114 0.006-0.228 0.011-0.342 0.014 0.114-0.004 0.228-0.008 0.342-0.014z"></path> <path d="M16 26.125c0.147 0 0.293-0.002 0.439-0.006-0.146 0.004-0.292 0.006-0.439 0.006z"></path> <path d="M16.846 23.85c0.024-0.001 0.049-0.003 0.073-0.004-0.024 0.002-0.049 0.003-0.073 0.004z"></path> <path d="M16.409 23.869c0.034-0.001 0.067-0.002 0.101-0.003-0.034 0.001-0.067 0.003-0.101 0.003z"></path> <path d="M27.427 20.256c-0.411-0.466-1.122-0.51-1.588-0.099-2.27 2.004-5.083 3.254-8.063 3.612 0.013 0.727 0.040 1.484 0.086 2.255 3.499-0.382 6.806-1.832 9.466-4.18 0.466-0.411 0.51-1.122 0.099-1.588z"></path> <path d="M17.859 26.023c-0.144 0.016-0.288 0.029-0.433 0.041 0.145-0.012 0.289-0.026 0.433-0.041z"></path> <path d="M17.359 26.070c-0.122 0.010-0.244 0.018-0.367 0.025 0.122-0.007 0.245-0.015 0.367-0.025z"></path></symbol> <symbol id="theme-icon-terminal" viewBox="0 0 32 32"><path d="M0 2v28h32v-28h-32zM30 28h-28v-24h28v24zM28 6h-24v20h24v-20zM14 16h-2v2h-2v2h-2v-2h2v-2h2v-2h-2v-2h-2v-2h2v2h2v2h2v2zM22 20h-6v-2h6v2z"></path></symbol> <symbol id="theme-icon-wordpress" viewBox="0 0 32 32"><path d="M4 16c0 4.626 2.76 8.624 6.763 10.518l-5.724-15.274c-0.666 1.453-1.039 3.062-1.039 4.756zM24.101 15.41c0-1.445-0.533-2.445-0.989-3.223-0.608-0.963-1.179-1.778-1.179-2.741 0-1.074 0.836-2.074 2.015-2.074 0.053 0 0.104 0.006 0.155 0.009-2.135-1.905-4.979-3.069-8.103-3.069-4.192 0-7.881 2.095-10.026 5.268 0.282 0.009 0.547 0.014 0.772 0.014 1.255 0 3.198-0.149 3.198-0.149 0.647-0.037 0.723 0.889 0.077 0.963 0 0-0.65 0.074-1.373 0.111l4.37 12.66 2.626-7.671-1.869-4.989c-0.646-0.037-1.259-0.111-1.259-0.111-0.647-0.037-0.571-1 0.076-0.963 0 0 1.981 0.149 3.16 0.149 1.255 0 3.198-0.149 3.198-0.149 0.647-0.037 0.723 0.889 0.076 0.963 0 0-0.651 0.074-1.373 0.111l4.337 12.563 1.197-3.895c0.518-1.617 0.913-2.778 0.913-3.778zM16.211 17.022l-3.601 10.189c1.075 0.308 2.212 0.476 3.39 0.476 1.397 0 2.738-0.235 3.985-0.663-0.032-0.050-0.062-0.103-0.086-0.161l-3.688-9.842zM26.53 10.393c0.052 0.372 0.081 0.771 0.081 1.202 0 1.185-0.228 2.519-0.913 4.186l-3.665 10.321c3.568-2.026 5.967-5.79 5.967-10.102 0-2.032-0.533-3.943-1.47-5.607zM16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 30c-7.732 0-14-6.268-14-14s6.268-14 14-14 14 6.268 14 14-6.268 14-14 14z"></path></symbol> <symbol id="theme-icon-git" viewBox="0 0 32 32"><path d="M31.397 14.575l-13.972-13.971c-0.804-0.805-2.109-0.805-2.915 0l-3.246 3.246 2.443 2.443c0.392-0.187 0.83-0.293 1.293-0.293 1.657 0 3 1.343 3 3 0 0.463-0.105 0.902-0.293 1.293l3.999 3.999c0.392-0.187 0.83-0.293 1.293-0.293 1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3c0-0.463 0.105-0.902 0.293-1.293l-3.999-3.999c-0.095 0.046-0.193 0.086-0.293 0.121v8.343c1.165 0.412 2 1.522 2 2.829 0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.306 0.835-2.417 2-2.829v-8.343c-1.165-0.412-2-1.522-2-2.829 0-0.463 0.105-0.902 0.293-1.293l-2.443-2.443-9.247 9.246c-0.805 0.806-0.805 2.11 0 2.915l13.973 13.971c0.804 0.805 2.109 0.805 2.915 0l13.906-13.906c0.805-0.805 0.805-2.111-0-2.915z"></path></symbol> <symbol id="theme-icon-loading" viewBox="0 0 100 100"><g transform="translate(50 50)"><g transform="scale(0.7)"><g transform="translate(-50 -50)"><g><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" values="0 50 50;360 50 50" keyTimes="0;1" dur="0.7575757575757576s"></animateTransform> <path fill-opacity="0.8" fill="#215d38" d="M50 50L50 0A50 50 0 0 1 100 50Z"></path></g> <g><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" values="0 50 50;360 50 50" keyTimes="0;1" dur="1.0101010101010102s"></animateTransform> <path fill-opacity="0.8" fill="#14a651" d="M50 50L50 0A50 50 0 0 1 100 50Z" transform="rotate(90 50 50)"></path></g> <g><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" values="0 50 50;360 50 50" keyTimes="0;1" dur="1.5151515151515151s"></animateTransform> <path fill-opacity="0.8" fill="#e9eee8" d="M50 50L50 0A50 50 0 0 1 100 50Z" transform="rotate(180 50 50)"></path></g> <g><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" values="0 50 50;360 50 50" keyTimes="0;1" dur="3.0303030303030303s"></animateTransform> <path fill-opacity="0.8" fill="#ec1c2d" d="M50 50L50 0A50 50 0 0 1 100 50Z" transform="rotate(270 50 50)"></path></g></g></g></g></symbol> <symbol id="theme-icon-alipay" viewBox="0 0 1024 1024"><path d="M512 64l338.773333 76.330667A85.333333 85.333333 0 0 1 917.333333 223.573333v407.253334a170.666667 170.666667 0 0 1-86.506666 148.48l-276.757334 156.842666a85.333333 85.333333 0 0 1-84.138666 0L193.173333 779.285333A170.666667 170.666667 0 0 1 106.666667 630.826667V223.573333a85.333333 85.333333 0 0 1 66.56-83.221333L512 64z m0 65.6L187.306667 202.773333a21.333333 21.333333 0 0 0-16.490667 18.346667L170.666667 223.573333v407.253334a106.666667 106.666667 0 0 0 49.792 90.24l4.266666 2.56 276.757334 156.842666a21.333333 21.333333 0 0 0 18.517333 1.216l2.517333-1.216 276.757334-156.864a106.581333 106.581333 0 0 0 36.821333-34.666666c-88.213333-43.242667-201.813333-98.922667-251.050667-123.008-57.749333 72.234667-132.224 116.053333-209.557333 116.053333-130.773333 0-175.189333-116.330667-113.28-192.938667 13.525333-16.704 36.48-32.64 72.149333-41.578666 55.744-13.930667 144.490667 8.682667 227.648 36.586666 13.098667-24.512 24.362667-51.2 33.28-79.488l3.648-12.224H342.613333v-26.410666h132.16v-47.317334h-160.064v-26.410666h160.064v-67.690667c0.064-1.365333 0.746667-9.621333 8.917334-10.986667l2.410666-0.192h64.597334v78.869334h158.293333v26.410666h-158.293333v47.317334h129.194666c-12.352 51.498667-31.146667 98.88-54.698666 140.48 39.210667 14.421333 74.410667 28.096 100.629333 37.013333 36.842667 12.544 83.882667 29.546667 127.530667 45.589333L853.333333 223.573333a21.333333 21.333333 0 0 0-14.272-20.138666l-2.368-0.682667L512 129.6z m-154.026667 342.016c-15.616 1.706667-44.885333 9.429333-60.885333 25.216-48 46.72-19.264 132.096 77.802667 132.096 56.426667 0 112.853333-40.277333 157.12-104.789333-62.997333-34.325333-116.373333-58.88-174.058667-52.522667z" fill="current" p-id="2431"></path></symbol> <symbol id="theme-icon-zhihu" viewBox="0 0 1024 1024"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m-90.7 477.8l-0.1 1.5c-1.5 20.4-6.3 43.9-12.9 67.6l24-18.1 71 80.7c9.2 33-3.3 63.1-3.3 63.1l-95.7-111.9v-0.1c-8.9 29-20.1 57.3-33.3 84.7-22.6 45.7-55.2 54.7-89.5 57.7-34.4 3-23.3-5.3-23.3-5.3 68-55.5 78-87.8 96.8-123.1 11.9-22.3 20.4-64.3 25.3-96.8H264.1s4.8-31.2 19.2-41.7h101.6c0.6-15.3-1.3-102.8-2-131.4h-49.4c-9.2 45-41 56.7-48.1 60.1-7 3.4-23.6 7.1-21.1 0 2.6-7.1 27-46.2 43.2-110.7 16.3-64.6 63.9-62 63.9-62-12.8 22.5-22.4 73.6-22.4 73.6h159.7c10.1 0 10.6 39 10.6 39h-90.8c-0.7 22.7-2.8 83.8-5 131.4H519s12.2 15.4 12.2 41.7H421.3z m346.5 167h-87.6l-69.5 46.6-16.4-46.6h-40.1V321.5h213.6v387.3zM408.2 611s0-0.1 0 0z"></path> <path d="M624.2 705.3l56.8-38.1h45.6-0.1V364.7H596.7v302.5h14.1z"></path></symbol> <symbol id="theme-icon-douban" viewBox="0 0 1024 1024"><path d="M512 962c248.526 0 450-201.474 450-450S760.526 62 512 62 62 263.474 62 512s201.474 450 450 450z m225.18-620.01H291.05v-45.36H737.18v45.36z m10.278 400.5H277.604v-45.864h140.526c-17.226-37.44-35.424-69.786-54.576-97.02l36.126-23.22h-63.288V395.252h357.012v181.134h-66.438l36.126 23.742c-17.064 37.44-34.812 69.606-53.28 96.48h137.646v45.9z m-104.148-211.716v-88.866H386.234v88.866h257.076z m-25.056 45.612h-209.34a1013.742 1013.742 0 0 1 61.434 120.24h85.428c26.19-40.608 47.016-80.694 62.478-120.24z"></path></symbol> <symbol id="theme-icon-reddit" viewBox="0 0 1024 1024"><path d="M620 548m-36 0a36 36 0 1 0 72 0 36 36 0 1 0-72 0Z"></path> <path d="M728 440c-14.3 0-26.8 8.4-32.5 20.6 18.8 14.3 34.4 30.7 45.9 48.8 13.2-5.3 22.6-18.3 22.6-33.4 0-19.9-16.1-36-36-36z"></path> <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m245 477.9c4.6 13.5 7 27.6 7 42.1 0 99.4-112.8 180-252 180s-252-80.6-252-180c0-14.5 2.4-28.6 7-42.1-25.3-11.2-43-36.4-43-65.9 0-39.8 32.2-72 72-72 27.1 0 50.6 14.9 62.9 37 36.2-19.8 80.2-32.8 128.1-36.1l58.4-131.1c4.3-9.8 15.2-14.8 25.5-11.8l91.6 26.5c9.1-16.9 27-28.4 47.6-28.4 29.8 0 54 24.2 54 54s-24.2 54-54 54c-23.5 0-43.5-15.1-50.9-36.1L577 308.3l-43 96.5c49.1 3 94.2 16.1 131.2 36.3 12.3-22.1 35.8-37 62.9-37 39.8 0 72 32.2 72 72-0.1 29.3-17.8 54.6-43.1 65.8z"></path> <path d="M585.7 624.9c-14.9 11.7-44.3 24.3-73.7 24.3s-58.9-12.6-73.7-24.3c-9.3-7.3-22.7-5.7-30 3.6-7.3 9.3-5.7 22.7 3.6 30 25.7 20.4 65 33.5 100.1 33.5 35.1 0 74.4-13.1 100.2-33.5 9.3-7.3 10.9-20.8 3.6-30-7.3-9.3-20.8-10.9-30.1-3.6zM296 440c-19.9 0-36 16.1-36 36 0 15.1 9.4 28.1 22.6 33.4 11.5-18.1 27.1-34.5 45.9-48.8-5.7-12.2-18.2-20.6-32.5-20.6z"></path> <path d="M404 548m-36 0a36 36 0 1 0 72 0 36 36 0 1 0-72 0Z"></path></symbol> <symbol id="theme-icon-medium" viewBox="0 0 1024 1024"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m256 253.7l-40.8 39.1c-3.6 2.7-5.3 7.1-4.6 11.4v287.7c-0.7 4.4 1 8.8 4.6 11.4l40 39.1v8.7H566.4v-8.3l41.3-40.1c4.1-4.1 4.1-5.3 4.1-11.4V422.5l-115 291.6h-15.5L347.5 422.5V618c-1.2 8.2 1.7 16.5 7.5 22.4l53.8 65.1v8.7H256v-8.7l53.8-65.1c5.8-5.9 8.3-14.3 7-22.4V392c0.7-6.3-1.7-12.4-6.5-16.7l-47.8-57.6V309H411l114.6 251.5 100.9-251.3H768v8.5z"></path></symbol> <symbol id="theme-icon-gitlab" viewBox="0 0 1024 1024"><path d="M119.3357169 417.76824047L512.10029408 921.10993065 81.63031764 608.67562798a34.65849841 34.65849841 0 0 1-12.40977407-38.18147714l50.08343516-152.75764939z m229.12060457 0h327.3196834L512.13203224 921.10993065zM250.25724262 114.28420951l98.19907885 303.48403096H119.3357169l98.19907883-303.48403096a17.39272642 17.39272642 0 0 1 32.72244689 0z m654.60762777 303.48403096l50.08343513 152.75764853a34.59502118 34.59502118 0 0 1-12.40977407 38.18147803l-430.46997643 312.43430269 392.76457719-503.34169105z m0 0h-229.12060456l98.19907884-303.48403096a17.39272642 17.39272642 0 0 1 32.72244686 0z"></path></symbol> <symbol id="theme-icon-bitbucket" viewBox="0 0 1024 1024"><path d="M568.7198535 493.0681176q4.06151091 32.23005566-25.87575626 51.68600322t-57.05767974 3.07888717q-19.98001364-8.71259627-27.38244519-29.67523369t-0.26203257-41.99078317 26.59634651-29.67523368q18.40781633-9.23666234 37.07766524-6.15777519t32.75412172 18.14578283 14.08427192 34.52284416zM625.51549978 482.32476633q-7.14039808-54.76489126-57.84377842-83.91605889t-100.81718535-6.68184036q-32.23005566 14.34630541-51.42397065 45.26619542t-17.68722515 66.29434123q2.03075591 46.57636017 39.63248722 79.33048189t84.70215753 28.69260991q46.57636017-4.06151091 77.75828368-42.97340695t25.61372277-86.01232226zM747.88489699 204.96286692q-10.21928612-13.82223933-28.69260991-22.79686819t-29.67523369-11.26741736-36.35707495-6.41980778q-148.90023536-24.04152545-289.67744888 1.04813215-22.01076954 3.60295322-33.80225299 6.15777518t-28.16854473 11.26741738-25.61372275 22.01076955q15.32892915 14.34630541 38.91189603 23.25542589t37.6017313 11.26741734 44.80763773 5.89574171q116.67018058 14.87037147 229.27884939 0.52406607 32.23005566-4.06151091 45.79026152-6.15777517t37.07766523-11.00538479 38.38782995-23.77949198zM777.03606548 734.59700901q-4.06151091 13.29817325-7.92649762 39.17392953t-7.14039807 42.97340694-14.60833799 35.83300887-29.67523368 28.88913502q-44.02153908 24.56559062-96.95219956 36.61910753t-103.37200732 11.26741736-103.10997387-9.49869493q-23.51745937-4.06151091-41.72875059-9.23666233t-39.1739295-13.82223935-37.33969871-22.27280213-26.59634653-31.44395612q-12.77410719-49.13118215-29.15116761-149.42430142l3.07888715-8.18853019 9.23666233-4.585577q114.11535863 75.72752868 259.21611656 75.72752868t259.74018263-75.72752868q10.74335217 3.07888716 12.25004112 11.79148343t-2.55482108 23.05890166-4.06151092 18.93188241zM869.66472063 242.82663081q-13.29817325 85.48825709-56.79564628 335.20567781-2.55482108 15.32892915-13.82223932 28.69260992t-22.27280215 20.43857134-27.90651124 15.85299433q-128.98573008 64.46011041-312.21228449 45.06967124-126.88946582-13.82223933-201.63437073-71.14195169-7.66446414-6.15777519-13.03614068-13.56020585t-8.71259628-17.88375026-4.58557699-17.42519255-3.07888713-20.24204713-2.81685456-17.88375025q-4.58557699-25.61372276-13.56020587-76.7756608t-14.3463054-82.67140253-12.05351692-75.46549517-11.26741736-80.83717173q1.50668982-13.29817325 8.97462887-24.82762411t16.11502785-19.19391498 23.05890166-15.32892917 23.51745939-11.52945086 24.56559063-9.49869491q64.00155272-23.51745937 160.16765361-32.75412173 193.96990658-18.9318824 345.94902998 25.61372277 79.33048189 23.51745937 110.05384769 62.42935539 8.18853021 10.21928612 8.4505637 26.07228047t-2.81685455 27.64447867z"></path></symbol> <symbol id="theme-icon-docker" viewBox="0 0 1024 1024"><path d="M253.05408173 713.57432206c-26.13778883 0-49.82993631-21.39935898-49.8299363-47.38429584s21.39935898-47.49893526 49.86814974-47.49893527c28.5834302 0 50.05921514 21.39935898 50.05921515 47.46072182s-23.76857435 47.38429583-49.86814973 47.38429585z m611.86882304-258.4354767c-5.15877412-37.90743614-28.65985618-68.78365482-59.61250084-92.4758023l-12.03713959-9.55328569-9.70613766 11.84607419c-18.87729164 21.39935898-26.36706768 59.34500856-24.0742792 87.69915988 2.29278849 21.47578585 9.17115398 42.79871885 21.17008014 59.38322201-9.70613766 4.96770869-21.7050647 9.55328568-30.95264467 14.40635406a202.14751917 202.14751917 0 0 1-64.19807784 9.55328569H72.57341471l-2.29278849 14.13886178a266.72772783 266.72772783 0 0 0 21.47578497 135.27452115l9.32400684 16.62271658v2.29278849c57.31971235 94.8832302 159.34880033 137.56730962 270.47261629 137.56730963 213.76431363 0 389.0862074-92.47580229 472.19979033-291.68090897 54.45372673 2.36921449 109.44243715-11.84607419 135.27452113-64.04522586l6.87836547-11.84607329-11.46394247-7.14585777c-30.95264466-18.87729164-73.3692318-21.39935898-108.90745345-11.84607418l-0.68783655 0.07642688z m-306.01083796-37.90743614h-92.78150712v92.47580229h92.857934V417.15498233l-0.07642688 0.11463944z m0-116.28259009h-92.78150712v92.47580231h92.857934V301.06345856l-0.07642688-0.11463943z m0-118.61359111h-92.78150712v92.47580229h92.857934v-92.47580229h-0.07642688z m113.49303045 234.8961812H580.15857383v92.47580229h92.4758023V417.15498233l-0.26749142 0.11463944z m-343.8418472 0H236.35493918v92.47580229h92.55222915V417.15498233l-0.3821317 0.11463944z m115.78581894 0h-91.71153975v92.47580229H444.88405268V417.15498233l-0.57319712 0.11463944z m-230.42524364 0H122.36513759v92.47580229h92.78150802V417.15498233l-1.14639426 0.11463944z m230.42524364-116.28259009h-91.71153975v92.47580231H444.88405268V301.06345856l-0.57319712-0.11463943z m-116.35901605 0H236.50779203v92.47580231H328.71610203V301.06345856l-0.61140966-0.11463943z"></path></symbol> <symbol id="theme-icon-csdn" viewBox="0 0 1024 1024"><path d="M512 954.96875C267.34835938 954.96875 69.03125 756.65164062 69.03125 512 69.03125 267.34835938 267.34835938 69.03125 512 69.03125c244.65164062 0 442.96875 198.31710938 442.96875 442.96875 0 244.65164062-198.31710938 442.96875-442.96875 442.96875z m14.76562529-357.77109346c30.15140596 3.76523438 59.50546904 4.4296875 88.88906221 1.81617187 19.93359375-1.771875 38.77453154-7.23515654 55.51875029-18.9590625 33.06023466-23.18203154 43.07132841-73.71 20.98195283-106.46015654-12.65414034-18.781875-31.84945312-26.25328096-52.56562471-30.71250028-30.32859346-6.52640654-60.9525-4.97601591-91.57640654-2.95312472-4.90218721 0.31007812-5.8471875 2.6578125-6.26062528 7.10226592-2.6578125 28.27617216-5.65523409 56.50804659-8.49023409 84.75468692-2.17054687 21.46921846-4.26726591 42.93843779-6.49687471 65.41171933z m46.20164062-29.35406308c1.69804716-18.08789091 3.14507812-34.03476591 4.69546875-49.98164005 1.34367216-13.76156221 2.95312471-27.49359346 4.09007755-41.26992245 0.31007812-3.70617159 1.34367216-5.75859375 5.15320342-5.52234346 13.51054687 0.90070341 27.43453154 0.02953096 40.42828096 3.15984404 31.56890596 7.63382841 42.15585909 46.98421846 20.199375 71.83476533-13.68773437 15.48914034-31.80515625 20.40609346-51.26624943 21.70546875-7.32375029 0.47249971-14.72132841 0.07382784-23.30015625 0.07382784zM512 444.77210966c-1.88999971-0.56109346-3.05648438-1.01882812-4.26726591-1.2403125-32.63203096-5.95054716-65.48554716-7.20562471-98.32429659-2.43632812-18.14695284 2.62828154-35.48179688 8.20968779-49.73062471 20.18460909-19.88929687 16.71468779-18.72281221 40.53164062 3.80953125 53.64351562 11.29570312 6.57070341 24.24515654 10.82320341 36.855 14.95757784 12.18164063 3.98671875 25.08679716 5.90625029 37.32749971 9.7453125 10.89703125 3.39609346 12.12257784 12.38835909 3.10078125 19.29867245-2.89406279 2.21484375-6.43781279 4.40015654-9.98156279 4.97601505-9.68624971 1.57992159-19.63828154 3.79476534-29.26546846 3.0860162-20.84906221-1.53562471-41.56523466-4.72499971-62.76867188-7.29421933-1.18124971 9.18421904-2.53968779 19.97789063-3.94242187 31.09640625 3.61757784 1.18124971 6.64453125 2.36250029 9.7453125 3.13031308 29.36882813 7.35328125 59.16585909 8.31304659 89.03671875 4.4296875 17.37914091-2.25914063 34.15289062-6.83648466 49.05140654-16.46367245 24.74718721-15.99117188 31.74609346-49.47960938-4.04578154-65.21976505-12.55078154-5.52234346-26.12039034-9.00703154-39.35039091-13.05281308-9.87820313-3.0121875-20.16984404-4.85789034-29.8708588-8.23921875-8.46070313-2.95312471-9.64195284-10.55742216-2.62828154-15.91734317 4.03101562-3.07125029 9.27281279-6.05390596 14.175-6.37875a416.02148409 416.02148409 0 0 1 46.18687471-0.73828183c13.30382841 0.60539034 26.51906221 3.07125029 40.2215625 4.7840625L512 444.77210966z m222.47367216 1.771875L718.71874971 600.50515625h46.8513287c4.13437529-39.48328154 8.40164034-78.4940625 12.16687471-117.56390625 0.5315625-5.50757841 2.03765625-7.64859346 7.51570284-7.79625 9.89296904-0.23625029 19.80070312-1.71281221 29.6641412-1.35843721 20.52421904 0.73828096 36.6778125 8.41640625 33.22265625 37.43085937-2.51015596 20.99671875-4.84312529 42.02296846-7.13179687 63.04921818-0.94500029 8.71171846-1.57992159 17.46773466-2.36250029 26.31234375h47.87015596c3.10078125-30.50578096 6.9103125-60.61289091 9.08085938-90.83812471 2.95312471-41.06320313-15.37101563-63.433125-55.96171818-69.39843722-35.4375-5.19750029-70.37296846-0.29531221-105.16078125 6.17203068z m-418.31015654 116.45648438c-7.55999971 1.12218779-14.175 2.42156221-20.84906221 3.0121875-22.19273438 1.93429659-44.40023466 3.41085937-66.01710966-3.69140654-12.03398409-3.97195284-21.35109375-10.88226534-25.78078125-22.45851562-6.83648466-17.91070341 0.76781279-40.753125 17.15765654-52.18171875 15.03140654-10.48359346 32.63203096-13.77632812 50.57226533-13.77632813 19.50539091-0.01476591 39.01078096 2.09671904 59.03296847 3.32226563L334.8125 443.04453154c-13.03804716-1.49132784-25.515-3.39609346-38.06578154-4.2525-35.48179688-2.42156221-69.76757813 2.25914063-101.6317963 17.70398409-25.97273466 12.59507841-45.03515596 31.15546904-50.76421875 58.94437471-6.79218779 33.00117187 9.98156279 60.12562529 44.78414063 74.27109432 16.56703125 6.71835909 33.99046904 10.82320341 51.9159375 10.89703125 21.41015654 0.08859375 42.82031221-1.35843721 64.20093692-2.5544537 2.68734346-0.14765654 7.19085966-2.51015596 7.50093779-4.3558588 1.71281221-9.99632784 2.36250029-20.14031221 3.41085937-30.68296932z"></path></symbol> <symbol id="theme-icon-juejin" viewBox="0 0 1272 1024"><path d="M740.59501875 142.16206924L638.9260538 62l-106.2 83.76206924-5.52413848 4.43793076 111.72413848 89.06896582 112.09655126-89.06896582-10.42758631-8.03793076z m385.2931034 310.90344785l-487.2413786 384.20689658-486.93103506-383.98965469L79.77777772 511.06896583l558.86896584 440.6586205 559.17931024-440.90689659-71.93793165-57.75517265z m-487.2413786 31.15862051L373.48812215 275.20689658 301.58122559 332.93103418l337.0344829 265.77931025 337.37586241-266.02758545-71.9068966-57.75517265-265.43793074 209.29655127z"></path></symbol> <symbol id="theme-icon-filter" viewBox="0 0 1024 1024"><path d="M426.666667 768h170.666666v-85.333333h-170.666666v85.333333zM128 256v85.333333h768V256H128z m128 298.666667h512v-85.333334H256v85.333334z" p-id="4563"></path></symbol> <symbol id="theme-icon-npm" viewBox="0 0 1024 1024"><path d="M117.149737 906.850263V117.160081h789.690182v789.690182z m148.521374-641.706667v492.533657h248.873374V367.843556h145.025293v389.906101h98.735321V265.143596z" fill="current" p-id="4722"></path></symbol></svg></div></div>
+    <script src="/assets/js/app.e57a5b2b.js" defer></script><script src="/assets/js/4.2449750b.js" defer></script><script src="/assets/js/9.0f7f066d.js" defer></script><script src="/assets/js/24.e3464cdb.js" defer></script><script src="/assets/js/5.ff79713e.js" defer></script>
+  </body>
+</html>
